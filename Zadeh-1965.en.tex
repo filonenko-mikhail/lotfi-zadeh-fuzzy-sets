@@ -1,0 +1,492 @@
+\documentclass[a4paper]{article}
+
+
+\usepackage{makeidx}
+
+\makeindex
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color,graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{indentfirst}
+
+\ifx \HCode\Undef
+\newcommand{\includefigure}[1]{\center{\includegraphics[width=1\linewidth]{#1}}}
+\else
+\newcommand{\includefigure}[1]{\center{\includegraphics[width=1\linewidth]{#1.png}}}
+\fi
+
+\pagestyle{headings}
+
+\title{Fuzzy Sets\footnote{This work was supported in part by the Joint Services Electronics Program (U.S. Army, U.S. Navy and U.S. Air force) under Grant No. AF-AFOSR-139-64 and by the National Science Foundation under Grant No. GP-2413 }}
+
+\author{L. A. Zadeh}
+\date {1965}
+\begin {document}
+\maketitle
+
+Information and control 8, 338-353 (1965)
+
+Department of Electrical Engineering and Electronics Research Laboratory, University of California, Berkeley, California
+
+\begin{quote}
+  A fuzzy set is a class of objects with a continuum of grades of membership. Such a set is characterized by a membership (characteristic) function which assigns to each object a grade of membership raging between zero and one. The notions of inclusion, union, intersection, complement, relation, convexity, etc., are extended to such sets, and various properties of these notions in the context of fuzzy sets are established. In particular, a separation theorem for convex fuzzy sets if proved without requiring that the fuzzy sets be disjoint.
+\end{quote}
+
+\tableofcontents
+
+\section{Introduction}
+More often than not, the classes of objects encountered in the real physical world do not have precisely defined criteria of membership. For example? the class of animals clearly includes dogs, horses, birds, etc. as its members, and clearly excludes such objects as rocks, fluids, plants, etc. However, such objects as starfish, bacteria, etc. have an ambiguous status with respect to the class of animals. The same kind of ambiguity arises in the case of number such as 10 in relation to the ``class'' of all real numbers which are much greater than 1.
+
+Clearly, the ``class of all real numbers which are much greater than 1,'' or ``the class of beautiful women,'' or ``the class of tall men,'' do not constitute classes or sets in the usual mathematical sense of these terms. Yet, the fact remains that such imprecisely defined ``classes'' play an important role in human thinking, particularly in the domains of patter recognition, communication of information, and abstraction.
+
+The purpose of this note is to explore in a preliminary way some of the basic properties and implications of concept which may be of use in dealing with ``classes'' of the type cited above. The concept in question is that of a fuzzy set,\footnote{An application of this concept to the formulation of a class of problems in pattern classification is described in RAND Memorandum RM-4307-PR, ``Abstraction and Pattern Classification,'' by R. Bellman, R. Kalaba and L.A. Zadeh, October, 1964.} that is, a ``class'' with a continuum of grades of membership. As will be seen in sequel, the notion of fuzzy set provides a convenient point of departure for the construction of a conceptual framework which parallels in many respects the framework used in the case of ordinary sets, but is more general than the latter and, potentially, may prove to have a much wider scope of applicability, particularly in the field of pattern classification and information processing. Essentially, such a framework provides a natural way of dealing with problems in which the source of imprecision is the absence of sharply defined criteria of class membership rather than the presence of random variables.
+
+We begin the discussion of fuzzy sets with several basic definitions.
+
+\section{Definitions}
+Let $X$ be a space of points (objects), with a generic element of $X$ denoted by $x$. Thus, $X={x}$.
+
+\index{fuzzy set}
+A \emph{fuzzy set (class)} $A$ in $X$ is characterized by a \emph{membership (characteristic) function} $f_A(x)$, which associates with each point\footnote{More generally, the domain of definition of $f_A(x)$ maybe restricted to a subset of $X$} in $X$ a real number in the interval $[0, 1]$,\footnote{In a more general setting, the range of the membership function can be taken to be a suitable partially ordered set $P$. For our purposes, it is convenient and sufficient to restrict the range of $f$ to the unit interval. If the values of $f_A(x)$ interpreted as truth values, the latter case corresponds to a multivalued logic with a continuum of truth values in the interval [0, 1]} with the value of $f_A(x)$ at $x$ representing the ``grade of membership'' of $x$ in $A$. Thus, the nearer the value of $f_A(x)$ to unity, the higher the grade of membership of $x$ in $A$. When $A$ is a set in the ordinary sense of the term, its membership function can take on only two values 0 and 1, with $f_A(x) = 1$ or $0$ according as $x$ does or does not belong to $A$. Thus, in this case $f_A(x)$ reduces to the familiar characteristic function of a set $A$. (When there is a need to differentiate between such sets and fuzzy sets, the sets with two-valued characteristic functions will be referred to as \emph{ordinary sets} or simply \emph{sets.})
+
+\emph{Example.} Let $X$ be the real line $R^1$ and let $A$ be a fuzzy set of numbers which are much grater than 1. Then, one can give a precise, albeit subjective, characterization of $A$ by specifying $f_A(x)$ as a function on $R^1$. Representative values of such a function might be: $f_A(0) = 0; f_A(1) = 0; f_A(5) = 0.01; f_A(10) = 0.2; f_a(100) = 0.95; f_A(500) = 1$.
+
+It should be noted that, although the membership function of a fuzzy set has some resemplance to a probability function when X is a countable set (or a probability density function when X is a continuum), there are essential differences between these concepts which will become clearer in the sequel once the rules of combination of membership functions and their basic properties have been established. In fact, the notion of a fuzzy set is completely nonstatistical in nature.
+
+We begin with several definitions involving fuzzy sets which are obvious extensions of the corresponding definitions for ordinary sets.
+
+A fuzzy set is \emph{empty} if and only if its membership functions is identically zero on X.
+
+Two fuzzy sets $A$ and $B$ are \emph{equal}, written as $A=B$, if and only if $f_A(x)=f_B(x)$ for all $x$ in $X$. (In the sequel, instead of writing $f_A(x) = f_B(x)$ for all $x$ in $X$, we shall write more simply $f_A = f_B$.)
+
+\index{complement}
+The \emph{complement} of a fuzzy set $A$ is denoted by $A'$ and is defined by 
+\begin{equation}\label{eq:complement}
+  f_{A'}=1-f_A.
+\end{equation}
+As in the case of ordinary sets, the notion of containment plays a central role in the case of fuzzy sets. This notion and the related notions of union and intersection are defined as follows.
+
+\index{containment}
+\emph{Containment.} $A$ is \emph{contained in} $B$ (or, equivalently, $A$ is a \emph{subset of} $B$, or $A$ is \emph{smaller than or equal to} $B$) if and only if $f_A \leqq f_B$. In symbols
+
+\begin{equation}
+  A \subset B \Leftrightarrow f_A \leqq f_B.
+\end{equation}
+
+\index{union}
+\emph{Union.} The \emph{union} of two fuzzy sets $A$ and $B$ with respective membership functions $f_A(x)$ and $f_B(x)$ is a fuzzy set $C$, written as $C=A \cup B$, whose membership functions is related to those of $A$ and $B$ by
+
+\begin{equation}\label{eq:union}
+  f_C(x) = Max[ f_A(x), f_B(x)] \qquad x \in X
+\end{equation}
+
+or, in abbreviated form
+
+\begin{equation}
+  f_C= f_A \vee f_B
+\end{equation}
+
+Note that $U$ has the associative property, that is, $A \cup (B \cup C)= (A \cup B) \cup C$.
+
+\emph{Comment.} A more intuitively appealing way of defining the union is the following: The union of $A$ and $B$ is the smallest fuzzy set containing both $A$ and $B$. More precisely, if $D$ as any fuzzy set which contains both $A$ and $B$, then it also contains the union of $A$ and $B$.
+
+To show that this definition is equivalent to \eqref{eq:union}, we note, first, that $C$ as defined by \eqref{eq:union} contains both $A$ and $B$, since
+$$Max[f_A, f_B] \geqq f_A$$
+and  $$Max[f_A, f_B] \geqq f_B.$$
+
+Furthermore, is $D$ is any fuzzy set containing both $A$ and $B$, then 
+$$ f_D \geqq f_A $$
+$$ f_D \geqq f_B $$
+and hence
+$$ f_D \geqq Max [f_A, f_B] = f_C$$
+
+which implies that $C \subset D$. Q.E.D.
+
+The notion of an intersection of fuzzy sets can be defined in an analogous manner. Specifically:
+
+\index{intersection}
+\emph{Intersection.} The \emph{intersection} of two fuzzy sets $A$ and $B$ with respective membership functions $f_A(x)$ and $f_B(x)$ is a fuzzy set $C$, written as $C = A \cap B$, whose membership function is related to those of $A$ and $B$ be
+
+\begin{equation}\label{eq:intersection}
+  f_C(x) = Min[f_A(x), f_B(x)], \qquad x \in X,
+\end{equation}
+
+or, in abbreviated form
+
+\begin{equation}
+  f_C(x) = f_A \wedge f_B.
+\end{equation}
+
+As in the case of the union, it is easy to show that the intersection of $A$ and $B$ is the \emph{largest} fuzzy set which is contained in both $A$ and $B$. As in the case of ordinary sets, $A$ and $B$ are \emph{disjoint} if $A \cap B$ is empty. Note that $\cap$, like $\cup$, has the associative property.
+
+The intersection and union of two fuzzy sets in $R^1$ are illustrated in Figure~\ref{img:fig1}. The membership function of the union is comprised of curve segments 1 and 2; that of the intersection is comprised of segments 3 and 4 (heavy lines).
+
+\emph{Comment.} Note that the notion of ``belonging,'' which plays a fundamental role in the case of ordinary sets, does not have the same role in
+
+\begin{figure}[ht]
+  \ifx \HCode\Undef
+  \includefigure{fig1}
+  \else
+  \center{\includegraphics[width=1\linewidth]{fig1.png}}
+  \fi
+  \caption{Illustration of the union and intersection of fuzzy sets in $R^1$}
+  \label{img:fig1}
+\end{figure}
+
+the case of fuzzy sets. Thus, it is not meaningful to speak of a point $x$ ``belonging'' to a fuzzy set $A$ except in the trivial sense of $f_A(x)$ being positive. Less trivially, one can introduce two levels $\alpha$ and $\beta$ $(0 < \alpha > 1. 0 < \beta < 1, \alpha > \beta )$ and agree to say that (1) ``$x$ belongs to $A$'' if $f_A(x) \geqq \alpha$; (2) ``$x$ does not belong to $A$'' if $f_A(x) \leqq \beta$; and (3) ``$x$ has an indeterminate status relative to $A$'' if $\beta < f_A(x) < \alpha$. This leads to a three-valued logic \cite{KLEENE} with three truth values: $T (f_A(x) \geqq \alpha), F(f_A(x) \leqq \beta)$, and $U(\beta < f_A(x) < \alpha$.
+
+\section{Some properties of $\cup$, $\cap$, and complementation}
+
+With the operations of union, intersection, and complementation defined as in \eqref{eq:union}, \eqref{eq:intersection}, and \eqref{eq:complement}, it is easy to extend many of the basic identities which hold for ordinary sets to fuzzy sets. As examples, we have
+
+De Morgan's laws
+
+\begin{eqnarray}
+  \label{eq:demorgan1} (A \cup B)' = A' \cap B' \\
+  (A \cap B)' = A' \cup B'
+\end{eqnarray}
+
+Distributive laws.
+\begin{eqnarray}
+  C \cap (A \cup B) = (C \cap A) \cup (C \cap B) \\
+  \label{eq:distributive2}C \cup (A \cap B) = (C \cup A) \cap (C \cup B)
+\end{eqnarray}
+
+These and similar equalities can readily be established by showing that the corresponding relations for the membership functions of $A$, $B$, and $C$ are identities. For example, in the case of \eqref{eq:demorgan1}, we have
+
+\begin{equation}
+  1 - Max[f_A, f_B] = Min[ 1 - f_A, 1 - f_B]
+\end{equation}
+
+which can be easily verified to be an identity by testing it for the two possible cases: $f_A(x) > f_B(X)$ and $f_A(x) < f_B(x)$.
+
+Similarly, in the case of \eqref{eq:distributive2}, the corresponding relation in terms of $f_A$, $f_B$, and $f_C$ is:
+
+\begin{equation}
+  Max[f_C, Min[ f_A, f_B]] = Min [Max [f_C, f_A], Max[f_C, f_B]]
+\end{equation}
+
+which can be verified to be an identity by considering the six cases:
+
+\begin{eqnarray*}
+  f_A(x) > f_B(x) > f_C(x), f_A(x) > f_C(x) > f_B(x), f_B(x) > f_A(x) > f_C(x), \\
+  f_B(x) > f_C(x) > f_A(x), f_C(x) > f_A(x) > f_B(x), f_C(x) > f_B(x) > f_A(x).
+\end{eqnarray*}
+
+Essentially, fuzzy sets in X constitute a distributive lattice with a 0 and 1
+\cite{BIRKHOFF}.
+
+\subsection{An Interpretation for Unions and Intersections}
+
+In the case of ordinary sets, a set $C$ which is expressed in terms of a family of sets $A_1, \cdots, A_i, \cdots, A_n$ through the connectives $\cup$ and $\cap$, can be represented as a network of switches $\alpha_1, \cdots, \alpha_n$, with $A_i \cap A_j$ and $A_i \cup A_j$ corresponding, respectively, to series and parallel combinations of $\alpha_i$ and $\alpha_j$. In the case of fuzzy sets, one can give an analogous interpretation in terms of sieves. Specifically, let $f_i(x), i = 1, \cdots, n$, denote the value of the membership function of $A_i$ at $x$. Associate with $f_i(x)$ a sieve $S_i(x)$ whose meshes are of size $f_I(x)$. Then, $f_i(x) \vee f_j(x)$ and $f_i(x) \wedge f_j(x)$ correspond, respectively, to parallel and series combinations of $S_i(x)$ and $S_j(x)$, as shown in Figure~\ref{img:fig2}.
+
+More generally, a well-formed expression involving $A_1, \cdots, A_n$, $\cup$ and $\cap$ corresponds to a network of sieves $S_1(x), \cdots, S_n(x)$ which can be found by the conventional synthesis techniques for switching circuits. As a very simple example,
+
+\begin{equation}
+  C = [(A_1 \cup A_2) \cap A_2] \cup A_4
+\end{equation}
+
+corresponds to the network shown in Figure~\ref{img:fig3}.
+
+Note that the mesh sizes of the sieves in the network depend on $x$ and that the network as a whole is equivalent to a single sieve whose meshes are of size $f_C(x)$.
+
+\begin{figure}[ht]
+  \includefigure{fig2}
+  \caption{Parallel and series connection of sieves simultating $\cup$ and $\cap$}
+  \label{img:fig2}
+\end{figure}
+
+\begin{figure}[ht]
+  \includefigure{fig3}
+  \caption{A network of sieves simultating ${[f_1(x) \vee f_2(x)] \wedge f_3(x)} \vee f_4(x)$}
+  \label{img:fig3}
+\end{figure}
+
+\section{Algebraic operations on fuzzy sets}
+
+In addition to the operations of union and intersection, one can define a number of other ways of forming combinations of fuzzy sets and relating them to one another. Among the more important of these are the following.
+
+\index{algebraic product}
+\emph{Algebraic product.} The \emph{algebraic product} of $A$ and $B$ is denoted by $AB$ and defined in terms of the membership functions of $A$ and $B$ by the relation
+
+\begin{equation}
+  f_AB = f_Af_B
+\end{equation}
+
+Clearly,
+
+\begin{equation}
+  AB \subset A \cap B.
+\end{equation}
+
+\index{algebraic sum}
+\emph{Algebraic sum.}\footnote{The dual of the algebraic product is the \emph{sum} $A \oplus B = (A'B')'=A+B-AB$. (This was pointed out by T. Cover. ) Note that for ordinary sets $\cap$ and the algebraic product are equivalent operations, as are $\cup$ and $\oplus$.}
+The \emph{algebraic sum} of $A$ and $B$ is denoted by $A+B$ and is defined by
+
+\begin{equation}
+  f_{A+B} = f_A + f_B
+\end{equation}
+provided the sum $f_A + f_B$ is less than or equal to unity. Thus, unlike the algebraic product, the algebraic sum is meaningful only when the condition $f_A(x) + f_B(x) \leqq 1$ is satisfied for all $x$.
+
+\index{absolute difference}
+\emph{Absolute difference.} The \emph{absolute difference} of $A$ and $B$ is denoted by $|A-B|$ and is defined by
+$$f_{|A-B|} = |f_A - f_B|.$$
+
+Note that in the case of ordinary sets $|A-B|$ reduces to the relative complement of $A \cap B$ in $A \cup B$.
+
+\index{convex combination}
+\emph{Convex combination.} By a convex combination of two vectors $f$ and $g$ is usually meant a linear combination of $f$ and $g$ of the form $\lambda f + (1 - \lambda)g$, in which $0\leqq \lambda \leqq 1$. This mode of combining $f$ and $g$ can be generalized to fuzzy sets in the following manner.
+
+Let $A$, $B$, and $\Lambda$ be arbitrary fuzzy sets. The \emph{convex combination} of $A$, $B$, and $\Lambda$ is denoted by $(A,B; \Lambda)$ and is defined by the relation
+
+\begin{equation}\label{eq:convex_combination}
+  (A, B; \Lambda) = \Lambda A + \Lambda' B
+\end{equation}
+
+where $\Lambda'$ is the complement of $\Lambda$. Written out in terms membership functions, \eqref{eq:convex_combination} reads
+
+\begin{equation}
+  f_{(A,B; \Lambda )}(x) = f_\Lambda(x)f_A(x) + [1 - f_\Lambda(x)]f_B(x), \qquad x \in X.
+\end{equation}
+
+A basic property of the convex combination of $A$, $B$, and $\Lambda$ is expressed by
+
+\begin{equation}
+  A \cap B \subset (A, B; \Lambda) \subset A \cup B \qquad for\quad all\quad \Lambda.
+\end{equation}
+
+This property is an immediate consequence of the inequalities 
+
+\begin{eqnarray}
+  Min [f_A(x), f_B(x)] \leqq \lambda f_A(x) + (1 - \lambda) f_B(x) \notag \\
+  \leqq Max [f_A(x), f_B(x)], \qquad x \in X
+\end{eqnarray}
+
+which hold for all $\lambda$ in $[0, 1]$. It is of interest to observe that, given any fuzzy set $C$ satisfying $A\cap B \subset C \subset A \cup B$, one can always find a fuzzy set $\Lambda$ such that $C = (A, B; \Lambda)$. The membership function of this set is given by
+
+\begin{equation}
+  f_\Lambda(x) = \frac{f_C(x) - f_B(x)}{f_A(x) - f_B(x)}, \qquad x \in X.
+\end{equation}
+
+\index{fuzzy relation}
+\emph{Fuzzy relation.} The concept of \emph{relation} (which is a generalization of that of a function) has a natural extension to fuzzy sets and plays an important role int the theory of such sets and their applications - just as it does in the case of ordinary sets. In the sequel, we shall merely define the notion of a fuzzy relation and touch upon a few related concepts.
+
+Ordinarily, a relation is defined as a set of ordered pairs \cite{HALMOS}; e.g., the set of all ordered pairs of real numbers $x$ and $y$ such that $x \geqq y$. In the context of fuzzy sets, a \emph{fuzzy relation in}  $X$ is a fuzzy set in the product space $X \times X$. For example, the relation denoted by $x \gg y,\quad x, y \in R^1$, may be regarded as a fuzzy set $A$ in $R^2$, with the membership function of $A, f_A(x, y)$, having the following (subjective) representative values: $f_a(10,5) = 0; f_A(100,10) = 0.7; f_A(100, 1) = 1; etc.$
+
+More generally, one can define an \emph{n-ary fuzzy relation} in $X$ as a fuzzy set $A$ in the product space $X \times X \times \cdots \times X$. For such relations, the membership function is of the form $f_A(x_1, \cdots , x_n)$, where $x_i \in X, i = 1, \cdots, n$.
+
+In the case of binary fuzzy relations, the \emph{composition} of two fuzzy relations $A$ and $B$ is denoted by $B\circ A$ and is defined as a fuzzy relation in $X$ whose membership function is related to those of $A$ and $B$ by
+$$f_{B \circ A}(x, y) = Sup_v Min [f_A(x, v), f_B(v, y)].$$
+
+Note that the operation of composition has the associative property
+$$A \circ (B \circ C) = (A \circ B) \circ C.$$
+
+\emph{Fuzzy sets induced by mappings.} Let $T$ be a mapping from $X$ to a space $Y$. Let $B$ be a fuzzy set in $Y$ with membership function $f_B(y)$. The inverse mapping $T^{-1}$ induces a fuzzy set $A$ in $X$ whose membership function is defined by
+
+\begin{equation}
+  f_A(x) = f_B(y), \qquad y \in Y
+\end{equation}
+
+for all $x$ in $X$ which are mapped by $T$ into $y$. 
+
+Consider now a converse problem in which $A$ is a given fuzzy set in $X$, and $T$, as before, is a mapping from $X$ to $Y$. The question is: What is the membership function for the fuzzy set $B$ in $Y$ which is induced by this mapping?
+
+If $T$ is not one-one, then an ambiguity arises when two or more distinct points in $X$, say $x_1$ and $x_2$, with different grades of membership in $A$ are mapped into the same point $y$ in $Y$. In this case, the question is: What grade of membership in $B$ should be assigned to $y$?
+
+To resolve this ambiguity, we agree to assign the larger of the two grades of membership to $y$. More generally, the membership function for $B$ will be defined by
+
+\begin{equation}\label{eq:b_membership}
+  f_B(y) = Max_{x \in T^{-1}(y)}f_A(x), \qquad y \in Y
+\end{equation}
+
+where $T^{-1}(x)$ is the set of points in $X$ which are mapped into $y$ by $T$.
+
+\section{Convexity}
+
+As will be seen in the sequel, the notion of convexity can readily be extended to fuzzy sets in such a way as to preserve many of the properties which it has in the context of ordinary sets. This notion appears to be particularly useful in applications involving pattern classification, optimization and related problems.
+
+\begin{figure}[ht]
+  \includefigure{fig4}
+  \caption{Convex and nonconvex fuzzy sets in $E^1$}
+  \label{img:fig4}
+\end{figure}
+
+In what follows, we assume for concreteness that $X$ is a real Euclidean space $E^n$.
+
+\subsection{Definitions}
+
+\index{convexity}
+\emph{Convexity.} A fuzzy set $A$ is \emph{convex} if and only if the sets $\Gamma_\alpha$ defined by
+
+\begin{equation}
+  \Gamma_\alpha = \{x | f_A(x) \geqq \alpha\}
+\end{equation}
+
+are convex for all $\alpha$ in the interval $\left(0, 1\right]$.
+
+  An alternative and more direct definition of convexity is the following \footnote{This way of expressing convexity was suggested to the writer by his colleague, E. Berlekamp.}: $A$ is \emph{convex} if and only if
+
+  \begin{equation}\label{eq:convex}
+    f_A[\lambda x_1 + (1- \lambda)x_2] \geqq Min[f_A(x_1), f_A(x_2)]
+  \end{equation}
+
+  for all $x_1$ and $x_2$ in $X$ and all $\lambda$ in $[0,1]$. Note that this definition does not imply that $f_A(x)$ must be a convex function of $x$. This is illustrated in Figure~\ref{img:fig4} for $n = 1$.
+
+  To show the equivalence between the above definitions note that if $A$ is convex in the sense of the first definition and $\alpha = f_A(x_1) \leqq f_A(x_2)$, than $x_2 \in \Gamma_\alpha$ and $\lambda x_1 + (1 - \lambda) x_2 \in \Gamma_\alpha$ by the convexity of $\Gamma_\alpha$. Hence
+  $$f_A[\lambda x_1 + ( 1 - \lambda) x_2] \geqq \alpha = f_A(x_1) = Min [f_A(x_1), f_A(x_2)].$$
+
+  Conversely, if $A$ is convex in the sense of the second definition and $\alpha = f_A(x_1)$, than $\Gamma_\alpha$ may be regarded as the set of all points $x_2$ for which $f_A(x_2) \geqq f_A(x_1)$. In virtue of \eqref{eq:convex}, every point of the form $\lambda x_1 + ( 1- \lambda) x_2, 0 \leqq \lambda \leqq 1$, is also in $\Gamma_\alpha$ and hence $\Gamma_\alpha$ is a convex set. Q.E.D.
+
+  A basic property of convex fuzzy sets is expressed by the
+
+  Theorem. \emph{If $A$ and $B$ are convex, so is their intersection.}
+
+  \emph{Proof}: Let $C = A \cap B$. Then
+  \begin{multline}
+    f_C[\lambda x_1 + ( 1 - \lambda) x_2] \\
+    = Min [f_A[ \lambda x_1 + ( 1 - \lambda)x_2], f_B[ \lambda x_1 + (1 - \lambda) x_2]].
+  \end{multline}
+
+  Now, since $A$ and $B$ are convex
+
+  \begin{equation}
+    \begin{aligned}
+      f_A[\lambda x_1 + ( 1 - \lambda) x_2] \geqq Min [f_A(x_1), f_A(x_2)] \\
+      f_B[\lambda x_1 + ( 1 - \lambda) x_2] \geqq Min [f_B(x_1), f_B(x_2)]
+    \end{aligned}
+  \end{equation}
+
+and hence
+
+\begin{multline}
+  f_C[\lambda x_1 + (1 - \lambda) x_2] \\
+  \geqq Min [ Min [ f_A(x_1), f_A(x_2)], Min[f_B(x_1), f_B(x_2)]]
+\end{multline}
+
+or equivalently
+
+\begin{multline}
+  f_C[\lambda x_1 + (1 - \lambda)x_2] \\
+  \geqq Min [ Min [ f_A(x_1), f_B(x_2)], Min[f_A(x_1), f_B(x_2)]]
+\end{multline}
+
+and thus
+
+\begin{equation}
+f_C[\lambda x_1 + (1 - \lambda) x_2] \geqq Min [f_C(x_1), f_C(x_2)]. \quad Q.~E.~D.
+\end{equation}
+
+\index{boundedness}
+\emph{Boundedness.} A fuzzy set $A$ is \emph{bounded} if and only if the sets $\Gamma_\alpha = \{x| f_A(x) \geqq \alpha\}$ are bounded for all $\alpha > 0$; that is, for every $\alpha > 0$ the exists a finite $R(\alpha)$ such that $\| x \| \leqq R(\alpha)$ for all x in $\Gamma_\alpha$.
+
+If $A$ is a bounded set, then for each $\epsilon > 0$ then exists a hyperplane such that $f_A(x) \leqq \epsilon$ for all $x$ on the side of $H$ which does not contain the origin. For, consider the set $\Gamma_\epsilon = \{x | f_A(x) \geqq \epsilon\}$. By hypothesis, this set is contained in a sphere $S$ of radius $R(\epsilon)$. Let $H$ be any hyperplane supporting $S$. Then, all points on the side of $H$ which does not contain the origin lie outside or on $S$, and hence for all such points $f_A(x) \leqq \epsilon$.
+
+Lemma. \emph{Let $A$ be a bounded fuzzy set and let $M = Sup_x f_A(x)$. ($M$ will be referred to as the \emph{maximal grade} in $A$.) Then there is at least one point $x_0$ at which $M$ is essentially attained in the sense that, for each $\epsilon > 0$, every spherical neighborhood of $x_0$ contains points in the set  $ Q(\epsilon) = \{ x | f_A(x) \geqq M - \epsilon \} $ . }
+
+\emph{Proof.}\footnote{This proof was suggested by A.J. Thomasian.} Consider a nested sequence of bounded sets $\Gamma_1, \Gamma_2, \cdots$, where $\Gamma_n = \{ x | f_A(x) \geqq M - M/(n + 1 ) \} ,~n=q,1,2,\cdots$. Note that $\Gamma_n$ is nonempty for all finite $n$ as a consequence of the definition of $M$ as $M = Sup_x f_A(x)$. (We assume that $M > 0$.)
+
+Let $x_n$ be an arbitrarily chosen point in $\Gamma_n, n = 1, 2, \cdots$. Then, $x_1, x_2, \cdots$, is a sequence of points in a closed bounded set $\Gamma_1$. By the Bolzano-Weierstrass theorem, this sequence must have at least one limit point, say $x_0$, in $\Gamma_1$. Consequently, every spherical neighborhood of $x_0$ will contain infinitely many points from from the sequence $x_1, x_2, \cdots$, and, more particularly, from the subsequence $x_{N+1}, x_{N+2}, \cdots$, where $N \geqq M/\epsilon$. Since the points of this subsequence fall within the set $Q(\epsilon) = \{x|f_A(x)\geqq M - \epsilon\}$, the lemma is proved.
+
+\emph{Strict and strong convexity.} A fuzzy set $A$ is \emph{strictly convex} if the sets $\Gamma_\alpha, 0 < \alpha \leqq 1$ are strictly convex (that is, if the midpoint of any two distinct points in $\Gamma_\alpha$ lies in the interior of $\Gamma_\alpha$). Note that this definition reduces to that of strict convexity for ordinary sets when $A$ is such a set.
+
+A fuzzy set $A$ is \emph{strongly convex} if, for any two distinct points $x_1$ and $x_2$, and any $\lambda$ in the open interval $(0, 1)$
+$$f_A[\lambda x_1 + (1- \lambda x_2] > Min[f_A(x_1), f_A(x_2)].$$
+
+Note that strong convexity does not imply strict convexity or vice-versa. Note also that if $A$ and $B$ are bounded, so is their union and intersection. Similarly, if $A$ and $B$ are strictly (strongly) convex, their intersection is strictly (strongly) convex.
+
+Let $A$ be a convex fuzzy set and let $M = Sup_x f_A(x)$. If $A$ is bounded, then, as shown above, either $M$ is attained for some $x$, say $x_0$, or there is at least one point $x_0$ at which $M$ is essentially attained in the sense that, for each $\epsilon > 0$, every spherical neighborhood of $x_0$ contains points in the set $Q(\epsilon) = \{x | M - F_A(x) \leqq \epsilon\}$. In particular, if $A$ is strongly convex and $x_0$ is attained, then $x_0$ is unique. For, if $M = f_A(x_0)$ and $M = f_A(x_1)$, with $x_1 \neq x_0$, then $f_A(x) > M$ for $x = 0.5 x_0 + 0.5 x_1$, which contradicts $M = Max_x f_A(x)$.
+
+More generally, let $C(A)$ be the set of all points in $X$ at which $M$ is essentially attained. This set will be referred to as the \emph{core} of $A$. In the case of convex fuzzy sets, we can assert the following property of $C(A)$.
+
+Theorem. \emph{If $A$ is a convex fuzzy set, then its core is a convex set.}
+\emph{Proof.} It will suffice to show that if $M$ is essentially attained at $x_0$ and $x_1, x_1 \neq x_0$, then it is also essentially attained at all $x$ of the form $x = \lambda x_0 + (1 - \lambda) x_1,~0 \leqq \lambda \leqq 1$.
+
+To the end, let $P$ be a cylinder of radius $\epsilon$ with the line passing through $x_0$ and $x_1$ as its axis. Let $x_0'$ be a point in a sphere of radius $\epsilon$ centering on $x_0$ and $x_1'$ be a point in a sphere of radius $\epsilon$ centering on $x_1$ such that $f_A(x_0') \geqq M - \epsilon$ and $f_A(x_1') \geqq M - \epsilon$. Then, by the convexity of $A$, for any point $u$ on the segment $x_0'x_1'$ must be less than or equal to $\epsilon$, since $x_0'x_1'$ lies in $P$. Consequently, a sphere of radius $\epsilon$ centering n $x$ will contain at least one point of the segment $x_0'x_1'$ and hence will contain at leas one point, say $w$, at which $f_A(w) \geqq M - \epsilon$. This establishes that $M$ is essentially attained at $x$ and thus proves the theorem.
+
+Corollary. \emph{If $X= E^1$ and $A$ is strongly convex, then the point at which $M$ is essentially attained is unique.}
+
+\emph{Shadow of a fuzzy set.} Let $A$ be a fuzzy set in $E^n$ with membership function $f_A(x) = f_A(x_1, \cdots, x_n)$. For notational simplicity, the notion of the \emph{shadow} (projection) of $A$ on a hyperplane $H$ will be defined below for the special case where $H$ is a coordinate hyperplane, e.g., $H = \{x|x_1 = 0\}$.
+
+Specifically, the \emph{shadow} of $A$ on $H = \{x | x_1 = 0\}$ is defined to be a fuzzy set $S_h(A)$ in $E^{n-1}$ with $f_{S_H(A)}(x)$ given by
+$$f_{S_H(A)}(x) = f_{S_H(A)}(x_2, \cdots, x_n) = Sup_{x_1} f_A(X_1, \cdots, X_n).$$
+
+Note that this definition is consistent with \eqref{eq:b_membership}.
+
+When $A$ is a convex fuzzy set, the following property of $S_H(A)$ is an immediate consequence of the above definition: if $A$ is a convex fuzzy set, then its shadow on any hyperplane is also a convex fuzzy set.
+
+An interesting property of the shadows of two convex fuzzy sets is expressed by the following implication.
+$$S_H(A) = S_H(B)~for~all~H \Rightarrow A = B.$$
+
+To prove this assertion,\footnote{This proof is based on an idea suggested by G. Dantzig for the case where $A$ and $B$ are ordinary convex sets.} it is sufficient to show that if there exists a point, say $x_0$, such that $f_A(x_0) \neq f_B(x_0)$, then their exists a hyperplane $H$ such that $f_{S_H(A)}(x_0^*) \neq f_{S_H(B)}(x_0^*)$, where $x_0^*$ is the projection of $x_0$ on $H$.
+
+Suppose that $f_A(x_0) = \alpha > f_B(x_0) = \beta$. Since $B$ is a convex fuzzy set, the set $\Gamma_\beta = \{x|f_B(x) > \beta\}$ is convex, and hence there exists a hyperplane $F$ supporting $\Gamma_\beta$ and passing through $x_0$. Let $H$ be a hyperplane orthogonal to $F$, and let $x_0^*$ be the projection of $x_0$ on $H$. Then, since $f_B(x) \leqq \beta$ for all $x$ on $F$, we have $f_{S_H(B)}(X_0^*) \neq f_{S_H(A)}(X_0^*)$, and similarly for the case where $\alpha < \beta$.
+
+A somewhat more general form of the above assertion is the following: Let $A$, but not necessarily $B$, be a convex fuzzy set, and let $S_H(X) = S_H(B)$ for all $H$. Then $A = conv B$, where $conv B$ is the convex hull of $B$, that is, the smallest convex convex set containing $B$. More generally, $S_H(A) = S_H(B)$ for all $H$ implies $conv A = conv B$.
+
+\emph{Separation of convex fuzzy sets.} The classical separation theorem for ordinary convex sets states, in essence, that if $A$ and $B$ are disjoint convex sets, then there exists a separating hyperplane $H$ such that $A$ is on one side of $H$ and $B$ is on the other side.
+
+It is natural to inquire if this theorem can be extended to convex fuzzy sets, without requiring that $A$ and $B$ be disjoint, since the condition of disjointness is much too restrictive in the case of fuzzy sets. It turns out, as will be seen in the sequel, that the answer to this question is in the affirmative.
+
+As a preliminary, we shall have to make a few definitions. Specifically, let $A$ and $B$ be two bounded fuzzy sets and let $H$ be a hypersurface in $E^b$ defined by an equation $h(x) = 0$, with all points for which $h(x) \geqq 0$ being on one side of $H$ and all points for which $h(x) \leqq 0$ being on the other side.\footnote{Note that the sets in question have $H$ in common} Let $K_H$ be a number dependent on $H$ such that $f_A(x) \leqq K_H$ on one side of $H$ and $f_B(x) \leqq K_H$ on the other side. Let $M_H$ be $Inf K_H$. The number $D_H = 1 - M_H$ will be called the \emph{degree of separation of $A$ and $B$ by $H$}.
+
+In general, one is concerned not with a given hypersurface $H$, but with a family of hypersurfaces $\{H_\lambda\}$, with $\lambda$ ranging over, say, $E^m$. The problem, then, is to find a member of this family which realizes the highest possible degree of separation.
+
+A special case of this problem is one where the $H_\lambda$ are hyperplanes in $E^n$, with $\lambda$ ranging over $E^n$. In this case, we define the \emph{degree of separability} of $A$ and $B$ by the relation
+
+\begin{equation}
+D = 1 - \overline M
+\end{equation}
+
+where 
+
+\begin{equation}
+\overline M = Inf_HM_H
+\end{equation}
+
+with the subscript $\lambda$ omitted for simplicity.
+
+\begin{figure}[ht]
+  \includefigure{fig5}
+  \caption{Illustration of the separation theorem for fuzzy sets in $E^1$}
+  \label{img:fig5}
+\end{figure}
+
+Among the various assertions that can be made concerning $D$, the following statement\footnote{This statement is based on a suggestion of E. Berlekamp.} is, in effect, an extension of the separation theorem to convex fuzzy sets.
+
+Theorem. \emph{Let $A$ and $B$ be bounded convex fuzzy sets in $E^n$, with maximal grades $M_A$ and $M_B$, respectively $[M_A = Sup_x f_A(x),~M_B = Sup_xf_B(x)]$. Let $M$ be the maximal grade for the intersection $A \cap B ~(M = Sup_x Min[f_A(x), f_B(x)])$. Then $D = 1 - M$.}
+
+\emph{Comment.} In plain words, the theorem states that the highest degree of separation of two convex fuzzy sets $A$ and $B$ that can be achieved with a hyperplane in $E^n$ is one minus the maximal grade in the intersection $A \cap B$. This is illustrated in Figure~\ref{img:fig5} for $n = 1$.
+
+\emph{Proof.} It is convenient to consider separately the following two cases: (1) $M=Min(M_A, M_B)$ and (2) $M < Min(M_A, M_B)$. Note that the latter case rules out $A \subset B$ or $B \subset A$.
+
+\emph{Case 1.} For concreteness, assume that $M_A < M_B$, so that $M = M_A$. Then, by the property of bounded sets already stated there exists a hyperplane $H$ such that $f_B(x) \leqq M$ for all $X$ on one side of $H$. On the other side of $H f_A(x) \leqq M$ because $f_A(x) \leqq M_A = M$ for all $x$.
+
+It remains to be shown that there do not exist an $M' < M$ and a hyperplane $H'$ such that $f_A(x) \leqq M'$ on one side of $H'$ and $f_B(x) \leqq M'$ on other side.
+
+This follows at once from the following observation. Suppose that such $H'$ and $M'$ exist, and assume for concreteness that the core of $A$ (that is, the set of points at which $M_A = M$ is essentially attained) is on the plus side of $H'$. This rules out the possibility that $f_A(x) \leqq M'$ for all $x$ on the plus side of $H'$, and hence necessitates that $f_A(x) \leqq M'$ for all $x$ on the minus side of $H'$, and $f_B(x) \leqq M'$ for all $x$ on the plus side of $H'$. Consequently, over all $x$ on the plus side of $H'$
+$$Sup_x Min[F_A(x), f_B(x)] \leqq M'$$
+and likewise for all $x$ on the minus side of $H'$. This implies that, over all $x$ in $X$, $Sup_x Min[f_A(x), f_B(x)] \leqq M'$, which contradicts the assumption that $Sup_xMin[f_A(x), f_B(x)] = M > M'$.
+
+\emph{Case 2.} Consider the convex sets $\Gamma_A = \{x | f_A(x) > M\}$ and  $\Gamma_B = \{x | f_B(x) > M\}$. These sets are nonempty and disjoint, for if they were not there would be a point, say $u$, such that $f_A(u) > M$ and $f_B(u) > M$, and hence $f_{A \cap B}(u) > M$, which contradicts the assumption that $M = Sup_x f_{A \cap B}(x)$.
+
+Since $\Gamma_A$ and $\Gamma_B$ are disjoint, by the separation theorem for ordinary convex sets there exists a hyperplane $H$ such that $\Gamma_A$ is on one side of $H$ (say, the plus side) and $\Gamma_B$ is on the other side (the minus side). Furthermore, by the definitions if $\Gamma_A$ and $\Gamma_B$, for all points on the minus side of $H$, $f_A(x) \leqq M$, and for all points on the plus side of $H$, $f_B(x) \leqq M$.
+
+Thus, we have shown that there exists a hyperplane $H$ which realizes $1 - M$ as the degree of separation of $A$ and $B$. The conclusion that a higher degree of separation of $A$ and $B$. The conclusion that a higher degree of separation of $A$ and $B$ cannot be realized follows from the argument given in Case 1. This concludes the proof of the theorem.
+
+The separation theorem for convex fuzzy sets appears to be of particular relevance to the problem of pattern discrimination. Its application to this class of problems as well as to problems of optimization will be explored in subsequent notes on fuzzy sets and their properties.
+
+Received: November 20, 1964
+
+\clearpage
+\printindex
+
+\begin{thebibliography}{10}
+\bibitem{BIRKHOFF} Birkhoff, G. (1948), ``Lattice Theory,'' Am. Math. Soc. Colloq. Publ., Vol. 25, New York.
+\bibitem{HALMOS} Halmos, P.R. (1960), ``Naive Set Theory.'' Van Nostrand, New York.
+\bibitem{KLEENE} Kleene, S. C. (1952), ``Introduction to Metamathematics,'' p. 334. Van Nosttrand, New York.
+\end{thebibliography}
+
+\end {document}

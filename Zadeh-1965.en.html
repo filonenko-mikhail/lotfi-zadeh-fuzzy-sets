@@ -1,0 +1,2594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Fuzzy Sets</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="Zadeh-1965.en.tex"> 
+<meta name="date" content="2012-03-15 22:48:00"> 
+<link rel="stylesheet" type="text/css" href="Zadeh-1965.en.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+
+<h2 class="titleHead">Fuzzy Sets<span class="thank-mark"><a 
+href="#tk-1">*</a></span></h2>
+<div class="author" ><span 
+class="cmr-12">L. A. Zadeh</span></div><br />
+<div class="date" ><span 
+class="cmr-12">1965</span></div>
+   <div class="thanks" ><br /><a 
+ id="tk-1"></a><span class="thank-mark"><span 
+class="cmsy-10">*</span></span>This work was supported in part by the Joint Services Electronics Program (U.S.
+Army, U.S. Navy and U.S. Air force) under Grant No. AF-AFOSR-139-64 and by the
+National Science Foundation under Grant No. GP-2413 </div></div>
+<!--l. 30--><p class="indent" >   Information and control 8, 338-353 (1965)
+<!--l. 32--><p class="indent" >   Department of Electrical Engineering and Electronics Research Laboratory,
+University of California, Berkeley, California
+     <div class="quote">
+     <!--l. 35--><p class="noindent" >A  fuzzy  set  is  a  class  of  objects  with  a  continuum  of  grades
+     of  membership.  Such  a  set  is  characterized  by  a  membership
+     (characteristic)  function  which  assigns  to  each  object  a  grade
+     of  membership  raging  between  zero  and  one.  The  notions  of
+     inclusion, union, intersection, complement, relation, convexity, etc.,
+     are extended to such sets, and various properties of these notions in
+     the context of fuzzy sets are established. In particular, a separation
+     theorem for convex fuzzy sets if proved without requiring that the
+     fuzzy sets be disjoint.</div>
+   <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Contents</h3>
+   <div class="tableofcontents">
+   <span class="sectionToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">Introduction</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="#x1-30002" id="QQ2-1-3">Definitions</a></span>
+<br />   <span class="sectionToc" >3 <a 
+href="#x1-40003" id="QQ2-1-5">Some properties of <span 
+class="cmsy-10">&#x222A;</span>, <span 
+class="cmsy-10">&#x2229;</span>, and complementation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.1 <a 
+href="#x1-50003.1" id="QQ2-1-6">An Interpretation for Unions and Intersections</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="#x1-60004" id="QQ2-1-9">Algebraic operations on fuzzy sets</a></span>
+<br />   <span class="sectionToc" >5 <a 
+href="#x1-70005" id="QQ2-1-10">Convexity</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.1 <a 
+href="#x1-80005.1" id="QQ2-1-12">Definitions</a></span>
+   </div>
+                                                                  
+
+                                                                  
+<!--l. 40--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-20001"></a>Introduction</h3>
+<!--l. 41--><p class="noindent" >More often than not, the classes of objects encountered in the real physical world do
+not have precisely defined criteria of membership. For example? the class of
+animals clearly includes dogs, horses, birds, etc. as its members, and clearly
+excludes such objects as rocks, fluids, plants, etc. However, such objects as
+starfish, bacteria, etc. have an ambiguous status with respect to the class of
+animals. The same kind of ambiguity arises in the case of number such as 10
+in relation to the &#8220;class&#8221; of all real numbers which are much greater than
+1.
+<!--l. 43--><p class="indent" >   Clearly, the &#8220;class of all real numbers which are much greater than 1,&#8221; or &#8220;the
+class of beautiful women,&#8221; or &#8220;the class of tall men,&#8221; do not constitute classes or sets
+in the usual mathematical sense of these terms. Yet, the fact remains that such
+imprecisely defined &#8220;classes&#8221; play an important role in human thinking, particularly
+in the domains of patter recognition, communication of information, and
+abstraction.
+<!--l. 45--><p class="indent" >   The purpose of this note is to explore in a preliminary way some of the basic
+properties and implications of concept which may be of use in dealing with
+&#8220;classes&#8221; of the type cited above. The concept in question is that of a fuzzy
+set,<span class="footnote-mark"><a 
+href="Zadeh-1965.en2.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x1-2001f1"></a> 
+that is, a &#8220;class&#8221; with a continuum of grades of membership. As will be seen in
+sequel, the notion of fuzzy set provides a convenient point of departure for the
+construction of a conceptual framework which parallels in many respects the
+framework used in the case of ordinary sets, but is more general than the latter and,
+potentially, may prove to have a much wider scope of applicability, particularly in the
+field of pattern classification and information processing. Essentially, such a
+framework provides a natural way of dealing with problems in which the source of
+imprecision is the absence of sharply defined criteria of class membership rather than
+the presence of random variables.
+<!--l. 47--><p class="indent" >   We begin the discussion of fuzzy sets with several basic definitions.
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-30002"></a>Definitions</h3>
+<!--l. 50--><p class="noindent" >Let <span 
+class="cmmi-10">X </span>be a space of points (objects), with a generic element of <span 
+class="cmmi-10">X </span>denoted by <span 
+class="cmmi-10">x</span>.
+Thus, <span 
+class="cmmi-10">X </span>= <span 
+class="cmmi-10">x</span>.
+<a 
+ id="dx1-3001"></a>
+<!--l. 53--><p class="indent" >   A <span 
+class="cmti-10">fuzzy set (class) </span><span 
+class="cmmi-10">A </span>in <span 
+class="cmmi-10">X </span>is characterized by a <span 
+class="cmti-10">membership</span>
+<span 
+class="cmti-10">(characteristic) function </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>), which associates with each
+point<span class="footnote-mark"><a 
+href="Zadeh-1965.en3.html#fn2x0"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x1-3002f2"></a>  in <span 
+class="cmmi-10">X </span>a real number
+                                                                  
+
+                                                                  
+in the interval [0<span 
+class="cmmi-10">,</span>1],<span class="footnote-mark"><a 
+href="Zadeh-1965.en4.html#fn3x0"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x1-3003f3"></a> 
+with the value of <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) at <span 
+class="cmmi-10">x </span>representing the &#8220;grade of membership&#8221; of <span 
+class="cmmi-10">x </span>in <span 
+class="cmmi-10">A</span>. Thus,
+the nearer the value of <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) to unity, the higher the grade of membership of <span 
+class="cmmi-10">x </span>in <span 
+class="cmmi-10">A</span>.
+When <span 
+class="cmmi-10">A </span>is a set in the ordinary sense of the term, its membership function can take
+on only two values 0 and 1, with <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) = 1 or 0 according as <span 
+class="cmmi-10">x </span>does or does not
+belong to <span 
+class="cmmi-10">A</span>. Thus, in this case <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) reduces to the familiar characteristic function
+of a set <span 
+class="cmmi-10">A</span>. (When there is a need to differentiate between such sets and fuzzy sets,
+the sets with two-valued characteristic functions will be referred to as <span 
+class="cmti-10">ordinary sets</span>
+or simply <span 
+class="cmti-10">sets.</span>)
+<!--l. 55--><p class="indent" >   <span 
+class="cmti-10">Example. </span>Let <span 
+class="cmmi-10">X </span>be the real line <span 
+class="cmmi-10">R</span><sup><span 
+class="cmr-7">1</span></sup> and let <span 
+class="cmmi-10">A </span>be a fuzzy set of numbers which are
+much grater than 1. Then, one can give a precise, albeit subjective, characterization of <span 
+class="cmmi-10">A</span>
+by specifying <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) as a function on <span 
+class="cmmi-10">R</span><sup><span 
+class="cmr-7">1</span></sup>. Representative values of such a function might
+be: <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(0) = 0;<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(1) = 0;<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(5) = 0<span 
+class="cmmi-10">.</span>01;<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(10) = 0<span 
+class="cmmi-10">.</span>2;<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">a</span></sub>(100) = 0<span 
+class="cmmi-10">.</span>95;<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(500) = 1.
+<!--l. 57--><p class="indent" >   It should be noted that, although the membership function of a fuzzy set has
+some resemplance to a probability function when X is a countable set (or a
+probability density function when X is a continuum), there are essential differences
+between these concepts which will become clearer in the sequel once the rules of
+combination of membership functions and their basic properties have been
+established. In fact, the notion of a fuzzy set is completely nonstatistical in
+nature.
+<!--l. 59--><p class="indent" >   We begin with several definitions involving fuzzy sets which are obvious
+extensions of the corresponding definitions for ordinary sets.
+<!--l. 61--><p class="indent" >   A fuzzy set is <span 
+class="cmti-10">empty </span>if and only if its membership functions is identically zero on
+X.
+<!--l. 63--><p class="indent" >   Two fuzzy sets <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>are <span 
+class="cmti-10">equal</span>, written as <span 
+class="cmmi-10">A </span>= <span 
+class="cmmi-10">B</span>, if and only if <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) = <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>)
+for all <span 
+class="cmmi-10">x </span>in <span 
+class="cmmi-10">X</span>. (In the sequel, instead of writing <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) = <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) for all <span 
+class="cmmi-10">x </span>in <span 
+class="cmmi-10">X</span>, we
+shall write more simply <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub> = <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>.)
+<a 
+ id="dx1-3004"></a>
+<!--l. 66--><p class="indent" >   The <span 
+class="cmti-10">complement </span>of a fuzzy set <span 
+class="cmmi-10">A </span>is denoted by <span 
+class="cmmi-10">A</span><span 
+class="cmsy-10">&#x2032; </span>and is defined by
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3005r1"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en0x.png" alt="fA&#x2032; = 1 - fA.
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 69--><p class="nopar" >
+As in the case of ordinary sets, the notion of containment plays a central role in the
+                                                                  
+
+                                                                  
+case of fuzzy sets. This notion and the related notions of union and intersection are
+defined as follows.
+<a 
+ id="dx1-3006"></a>
+<!--l. 73--><p class="indent" >   <span 
+class="cmti-10">Containment. </span><span 
+class="cmmi-10">A </span>is <span 
+class="cmti-10">contained in </span><span 
+class="cmmi-10">B </span>(or, equivalently, <span 
+class="cmmi-10">A </span>is a <span 
+class="cmti-10">subset of </span><span 
+class="cmmi-10">B</span>, or <span 
+class="cmmi-10">A </span>is
+<span 
+class="cmti-10">smaller than or equal to </span><span 
+class="cmmi-10">B</span>) if and only if <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub> <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>. In symbols
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3007r2"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en1x.png" alt="A &#x2282; B &#x21D4; fA &#x2266; fB.
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 77--><p class="nopar" >
+<a 
+ id="dx1-3008"></a>
+<!--l. 80--><p class="indent" >   <span 
+class="cmti-10">Union. </span>The <span 
+class="cmti-10">union </span>of two fuzzy sets <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>with respective membership
+functions <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) is a fuzzy set <span 
+class="cmmi-10">C</span>, written as <span 
+class="cmmi-10">C </span>= <span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x222A; </span><span 
+class="cmmi-10">B</span>, whose
+membership functions is related to those of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>by
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3009r3"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en2x.png" alt="fC(x) = M ax[fA(x),fB (x)]  x &#x2208; X
+" class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+<!--l. 84--><p class="nopar" >
+<!--l. 86--><p class="indent" >   or, in abbreviated form
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3010r4"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en3x.png" alt="fC = fA &#x2228; fB
+" class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+<!--l. 90--><p class="nopar" >
+<!--l. 92--><p class="indent" >   Note that <span 
+class="cmmi-10">U </span>has the associative property, that is, <span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x222A; </span>(<span 
+class="cmmi-10">B </span><span 
+class="cmsy-10">&#x222A; </span><span 
+class="cmmi-10">C</span>) = (<span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x222A; </span><span 
+class="cmmi-10">B</span>) <span 
+class="cmsy-10">&#x222A; </span><span 
+class="cmmi-10">C</span>.
+<!--l. 94--><p class="indent" >   <span 
+class="cmti-10">Comment. </span>A more intuitively appealing way of defining the union is the following:
+The union of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>is the smallest fuzzy set containing both <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B</span>. More
+precisely, if <span 
+class="cmmi-10">D </span>as any fuzzy set which contains both <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B</span>, then it also contains
+the union of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B</span>.
+<!--l. 96--><p class="indent" >   To show that this definition is equivalent to (<a 
+href="#x1-3009r3">3<!--tex4ht:ref: eq:union --></a>), we note, first, that <span 
+class="cmmi-10">C </span>as defined
+by (<a 
+href="#x1-3009r3">3<!--tex4ht:ref: eq:union --></a>) contains both <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B</span>, since
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en4x.png" alt="M ax[fA,fB] &#x2267; fA  " class="math-display" ></center>
+and
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en5x.png" alt="M ax[f  ,f  ] &#x2267; f .
+     A  B     B
+" class="math-display" ></center>
+<!--l. 100--><p class="indent" >   Furthermore, is <span 
+class="cmmi-10">D </span>is any fuzzy set containing both <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B</span>, then
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en6x.png" alt="fD &#x2267; fA
+" class="math-display" ></center>
+                                                                  
+
+                                                                  
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en7x.png" alt="fD &#x2267; fB  " class="math-display" ></center> and
+hence
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en8x.png" alt="fD &#x2267; M ax[fA,fB] = fC
+" class="math-display" ></center>
+<!--l. 106--><p class="indent" >   which implies that <span 
+class="cmmi-10">C </span><span 
+class="cmsy-10">&#x2282; </span><span 
+class="cmmi-10">D</span>. Q.E.D.
+<!--l. 108--><p class="indent" >   The notion of an intersection of fuzzy sets can be defined in an analogous manner.
+Specifically:
+<a 
+ id="dx1-3011"></a>
+<!--l. 111--><p class="indent" >   <span 
+class="cmti-10">Intersection. </span>The <span 
+class="cmti-10">intersection </span>of two fuzzy sets <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>with respective
+membership functions <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) is a fuzzy set <span 
+class="cmmi-10">C</span>, written as <span 
+class="cmmi-10">C </span>= <span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">B</span>,
+whose membership function is related to those of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>be
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3012r5"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en9x.png" alt="fC(x) = M in[fA(x),fB (x )],    x &#x2208; X,
+" class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+<!--l. 115--><p class="nopar" >
+<!--l. 117--><p class="indent" >   or, in abbreviated form
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3013r6"></a>
+                                                                  
+
+                                                                  
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en10x.png" alt="fC (x) = fA &#x2227; fB.
+" class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+<!--l. 121--><p class="nopar" >
+<!--l. 123--><p class="indent" >   As in the case of the union, it is easy to show that the intersection of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>is
+the <span 
+class="cmti-10">largest </span>fuzzy set which is contained in both <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B</span>. As in the case of ordinary
+sets, <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>are <span 
+class="cmti-10">disjoint </span>if <span 
+class="cmmi-10">A</span><span 
+class="cmsy-10">&#x2229;</span><span 
+class="cmmi-10">B </span>is empty. Note that <span 
+class="cmsy-10">&#x2229;</span>, like <span 
+class="cmsy-10">&#x222A;</span>, has the associative
+property.
+<!--l. 125--><p class="indent" >   The intersection and union of two fuzzy sets in <span 
+class="cmmi-10">R</span><sup><span 
+class="cmr-7">1</span></sup> are illustrated in
+Figure&#x00A0;<a 
+href="#x1-30141">1<!--tex4ht:ref: img:fig1 --></a>. The membership function of the union is comprised of curve segments
+1 and 2; that of the intersection is comprised of segments 3 and 4 (heavy
+lines).
+<!--l. 127--><p class="indent" >   <span 
+class="cmti-10">Comment. </span>Note that the notion of &#8220;belonging,&#8221; which plays a fundamental role in
+the case of ordinary sets, does not have the same role in
+<!--l. 129--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                  
+
+                                                                  
+<a 
+ id="x1-30141"></a>
+                                                                  
+
+                                                                  
+
+<!--l. 133--><p class="noindent" ><img 
+src="fig1.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1: </span><span  
+class="content">Illustration of the union and intersection of fuzzy sets in <span 
+class="cmmi-10">R</span><sup><span 
+class="cmr-7">1</span></sup></span></div><!--tex4ht:label?: x1-30141 -->
+                                                                  
+
+                                                                  
+<!--l. 137--><p class="indent" >   </div><hr class="endfigure">
+<!--l. 139--><p class="indent" >   the case of fuzzy sets. Thus, it is not meaningful to speak of a point <span 
+class="cmmi-10">x </span>&#8220;belonging&#8221;
+to a fuzzy set <span 
+class="cmmi-10">A </span>except in the trivial sense of <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) being positive. Less trivially, one
+can introduce two levels <span 
+class="cmmi-10">&#x03B1; </span>and <span 
+class="cmmi-10">&#x03B2; </span>(0 <span 
+class="cmmi-10">&#x003C; &#x03B1; &#x003E; </span>1<span 
+class="cmmi-10">.</span>0 <span 
+class="cmmi-10">&#x003C; &#x03B2; &#x003C; </span>1<span 
+class="cmmi-10">,&#x03B1; &#x003E; &#x03B2;</span>) and agree to say that
+(1) &#8220;<span 
+class="cmmi-10">x </span>belongs to <span 
+class="cmmi-10">A</span>&#8221; if <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">&#x03B1;</span>; (2) &#8220;<span 
+class="cmmi-10">x </span>does not belong to <span 
+class="cmmi-10">A</span>&#8221; if <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">&#x03B2;</span>; and
+(3) &#8220;<span 
+class="cmmi-10">x </span>has an indeterminate status relative to <span 
+class="cmmi-10">A</span>&#8221; if <span 
+class="cmmi-10">&#x03B2; &#x003C; f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmmi-10">&#x003C; &#x03B1;</span>. This leads to a
+three-valued logic <span class="cite">[<a 
+href="#XKLEENE">3</a>]</span> with three truth values: <span 
+class="cmmi-10">T</span>(<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">&#x03B1;</span>)<span 
+class="cmmi-10">,F</span>(<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">&#x03B2;</span>), and
+<span 
+class="cmmi-10">U</span>(<span 
+class="cmmi-10">&#x03B2; &#x003C; f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmmi-10">&#x003C; &#x03B1;</span>.
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-40003"></a>Some properties of <span 
+class="cmsy-10">&#x222A;</span>, <span 
+class="cmsy-10">&#x2229;</span>, and complementation</h3>
+<!--l. 143--><p class="noindent" >With the operations of union, intersection, and complementation defined as in (<a 
+href="#x1-3009r3">3<!--tex4ht:ref: eq:union --></a>),
+(<a 
+href="#x1-3012r5">5<!--tex4ht:ref: eq:intersection --></a>), and (<a 
+href="#x1-3005r1">1<!--tex4ht:ref: eq:complement --></a>), it is easy to extend many of the basic identities which hold for ordinary
+sets to fuzzy sets. As examples, we have
+<!--l. 145--><p class="indent" >   De Morgan&#8217;s laws
+<!--l. 147--><p class="indent" >   <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en11x.png" alt="(A&#x222A; B )&#x2032; = A &#x2032; &#x2229; B&#x2032;                      (7)
+(A&#x2229; B )&#x2032; = A &#x2032; &#x222A; B&#x2032;                      (8)
+" class="math-display" ><a 
+ id="x1-4001r7"></a></center>
+</div>
+<!--l. 152--><p class="indent" >   Distributive laws. <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en12x.png" alt="C &#x2229;(A &#x222A; B) = (C &#x2229; A)&#x222A; (C &#x2229;B )                 (9)
+C &#x222A;(A &#x2229; B) = (C &#x222A; A)&#x2229; (C &#x222A;B )                (10)
+" class="math-display" ><a 
+ id="x1-4002r10"></a></center>
+</div>
+<!--l. 158--><p class="indent" >   These and similar equalities can readily be established by showing that the
+corresponding relations for the membership functions of <span 
+class="cmmi-10">A</span>, <span 
+class="cmmi-10">B</span>, and <span 
+class="cmmi-10">C </span>are identities.
+For example, in the case of (<a 
+href="#x1-4001r7">7<!--tex4ht:ref: eq:demorgan1 --></a>), we have
+                                                                  
+
+                                                                  
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4003r11"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en13x.png" alt="1- M ax [fA,fB] = M in[1- fA,1- fB ]
+" class="math-display" ></center></td><td class="equation-label">(11)</td></tr></table>
+<!--l. 162--><p class="nopar" >
+<!--l. 164--><p class="indent" >   which can be easily verified to be an identity by testing it for the two possible
+cases: <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmmi-10">&#x003E; f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">X</span>) and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmmi-10">&#x003C; f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>).
+<!--l. 166--><p class="indent" >   Similarly, in the case of (<a 
+href="#x1-4002r10">10<!--tex4ht:ref: eq:distributive2 --></a>), the corresponding relation in terms of <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>, and
+<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">C</span></sub> is:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4004r12"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en14x.png" alt="M ax[fC, M in[fA,fB]] = M in [M ax[fC,fA],M ax[fC,fB]]
+" class="math-display" ></center></td><td class="equation-label">(12)</td></tr></table>
+<!--l. 170--><p class="nopar" >
+<!--l. 172--><p class="indent" >   which can be verified to be an identity by considering the six cases:
+<!--l. 174--><p class="indent" >   <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en15x.png" alt="fA (x) &#x003E; fB(x) &#x003E; fC(x),fA(x) &#x003E; fC(x) &#x003E; fB(x),fB(x) &#x003E; fA(x) &#x003E; fC (x ),
+ fB(x) &#x003E; fC(x) &#x003E; fA(x),fC(x) &#x003E; fA(x) &#x003E; fB (x),fC(x) &#x003E; fB (x ) &#x003E; fA(x).
+" class="math-display" ></center>
+</div>
+                                                                  
+
+                                                                  
+<!--l. 179--><p class="indent" >   Essentially, fuzzy sets in X constitute a distributive lattice with a 0 and 1
+<span class="cite">[<a 
+href="#XBIRKHOFF">1</a>]</span>.
+<!--l. 182--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-50003.1"></a>An Interpretation for Unions and Intersections</h4>
+<!--l. 184--><p class="noindent" >In the case of ordinary sets, a set <span 
+class="cmmi-10">C </span>which is expressed in terms of a family of sets
+<span 
+class="cmmi-10">A</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en16x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">,A</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en17x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">,A</span><sub><span 
+class="cmmi-7">n</span></sub> through the connectives <span 
+class="cmsy-10">&#x222A; </span>and <span 
+class="cmsy-10">&#x2229;</span>, can be represented as a network
+of switches <span 
+class="cmmi-10">&#x03B1;</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en18x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">,&#x03B1;</span><sub><span 
+class="cmmi-7">n</span></sub>, with <span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">i</span></sub> <span 
+class="cmsy-10">&#x2229;</span><span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">j</span></sub> and <span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">i</span></sub> <span 
+class="cmsy-10">&#x222A;</span><span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">j</span></sub> corresponding, respectively, to series
+and parallel combinations of <span 
+class="cmmi-10">&#x03B1;</span><sub><span 
+class="cmmi-7">i</span></sub> and <span 
+class="cmmi-10">&#x03B1;</span><sub><span 
+class="cmmi-7">j</span></sub>. In the case of fuzzy sets, one can give an
+analogous interpretation in terms of sieves. Specifically, let <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">i</span></sub>(<span 
+class="cmmi-10">x</span>)<span 
+class="cmmi-10">,i </span>= 1<span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en19x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">,n</span>, denote
+the value of the membership function of <span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">i</span></sub> at <span 
+class="cmmi-10">x</span>. Associate with <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">i</span></sub>(<span 
+class="cmmi-10">x</span>) a sieve <span 
+class="cmmi-10">S</span><sub><span 
+class="cmmi-7">i</span></sub>(<span 
+class="cmmi-10">x</span>)
+whose meshes are of size <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">I</span></sub>(<span 
+class="cmmi-10">x</span>). Then, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">i</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmsy-10">&#x2228; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">j</span></sub>(<span 
+class="cmmi-10">x</span>) and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">i</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmsy-10">&#x2227; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">j</span></sub>(<span 
+class="cmmi-10">x</span>) correspond,
+respectively, to parallel and series combinations of <span 
+class="cmmi-10">S</span><sub><span 
+class="cmmi-7">i</span></sub>(<span 
+class="cmmi-10">x</span>) and <span 
+class="cmmi-10">S</span><sub><span 
+class="cmmi-7">j</span></sub>(<span 
+class="cmmi-10">x</span>), as shown in
+Figure&#x00A0;<a 
+href="#x1-50022">2<!--tex4ht:ref: img:fig2 --></a>.
+<!--l. 186--><p class="indent" >   More generally, a well-formed expression involving <span 
+class="cmmi-10">A</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en20x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">,A</span><sub><span 
+class="cmmi-7">n</span></sub>, <span 
+class="cmsy-10">&#x222A; </span>and <span 
+class="cmsy-10">&#x2229;</span>
+corresponds to a network of sieves <span 
+class="cmmi-10">S</span><sub><span 
+class="cmr-7">1</span></sub>(<span 
+class="cmmi-10">x</span>)<span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en21x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">,S</span><sub><span 
+class="cmmi-7">n</span></sub>(<span 
+class="cmmi-10">x</span>) which can be found by the
+conventional synthesis techniques for switching circuits. As a very simple
+example,
+   <table 
+class="equation"><tr><td><a 
+ id="x1-5001r13"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en22x.png" alt="C = [(A1 &#x222A;A2 )&#x2229;A2 ]&#x222A;A4
+" class="math-display" ></center></td><td class="equation-label">(13)</td></tr></table>
+<!--l. 190--><p class="nopar" >
+<!--l. 192--><p class="indent" >   corresponds to the network shown in Figure&#x00A0;<a 
+href="#x1-50033">3<!--tex4ht:ref: img:fig3 --></a>.
+<!--l. 194--><p class="indent" >   Note that the mesh sizes of the sieves in the network depend on <span 
+class="cmmi-10">x </span>and that the
+network as a whole is equivalent to a single sieve whose meshes are of size
+<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">C</span></sub>(<span 
+class="cmmi-10">x</span>).
+<!--l. 196--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                  
+
+                                                                  
+<a 
+ id="x1-50022"></a>
+                                                                  
+
+                                                                  
+
+<!--l. 197--><p class="noindent" ><img 
+src="fig2.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;2: </span><span  
+class="content">Parallel and series connection of sieves simultating <span 
+class="cmsy-10">&#x222A; </span>and <span 
+class="cmsy-10">&#x2229;</span></span></div><!--tex4ht:label?: x1-50022 -->
+                                                                  
+
+                                                                  
+<!--l. 200--><p class="indent" >   </div><hr class="endfigure">
+<!--l. 202--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                  
+
+                                                                  
+<a 
+ id="x1-50033"></a>
+                                                                  
+
+                                                                  
+
+<!--l. 203--><p class="noindent" ><img 
+src="fig3.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;3: </span><span  
+class="content">A network of sieves simultating [<span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">1</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmsy-10">&#x2228; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">2</span></sub>(<span 
+class="cmmi-10">x</span>)] <span 
+class="cmsy-10">&#x2227; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmsy-10">&#x2228; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub>(<span 
+class="cmmi-10">x</span>)</span></div><!--tex4ht:label?: x1-50033 -->
+                                                                  
+
+                                                                  
+<!--l. 206--><p class="indent" >   </div><hr class="endfigure">
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-60004"></a>Algebraic operations on fuzzy sets</h3>
+<!--l. 210--><p class="noindent" >In addition to the operations of union and intersection, one can define a number of
+other ways of forming combinations of fuzzy sets and relating them to one another.
+Among the more important of these are the following.
+<a 
+ id="dx1-6001"></a>
+<!--l. 213--><p class="indent" >   <span 
+class="cmti-10">Algebraic product. </span>The <span 
+class="cmti-10">algebraic product </span>of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>is denoted by <span 
+class="cmmi-10">AB </span>and
+defined in terms of the membership functions of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>by the relation
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6002r14"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en23x.png" alt="fAB  = fAfB
+" class="math-display" ></center></td><td class="equation-label">(14)</td></tr></table>
+<!--l. 217--><p class="nopar" >
+<!--l. 219--><p class="indent" >   Clearly,
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6003r15"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en24x.png" alt="AB  &#x2282; A&#x2229; B.
+" class="math-display" ></center></td><td class="equation-label">(15)</td></tr></table>
+<!--l. 223--><p class="nopar" >
+<a 
+ id="dx1-6004"></a>
+<!--l. 226--><p class="indent" >   <span 
+class="cmti-10">Algebraic sum.</span><span class="footnote-mark"><a 
+href="Zadeh-1965.en5.html#fn4x0"><sup class="textsuperscript">4</sup></a></span><a 
+ id="x1-6005f4"></a> 
+The <span 
+class="cmti-10">algebraic sum </span>of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>is denoted by <span 
+class="cmmi-10">A </span>+ <span 
+class="cmmi-10">B </span>and is defined by
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6006r16"></a>
+                                                                  
+
+                                                                  
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en25x.png" alt="fA+B = fA + fB
+" class="math-display" ></center></td><td class="equation-label">(16)</td></tr></table>
+<!--l. 231--><p class="nopar" >
+provided the sum <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub> + <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub> is less than or equal to unity. Thus, unlike the algebraic
+product, the algebraic sum is meaningful only when the condition <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) + <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span>1
+is satisfied for all <span 
+class="cmmi-10">x</span>.
+<a 
+ id="dx1-6007"></a>
+<!--l. 235--><p class="indent" >   <span 
+class="cmti-10">Absolute difference. </span>The <span 
+class="cmti-10">absolute difference </span>of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>is denoted by <span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">A</span><span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">B</span><span 
+class="cmsy-10">| </span>and
+is defined by
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en26x.png" alt="f|A-B| = |fA - fB |.
+" class="math-display" ></center>
+<!--l. 238--><p class="indent" >   Note that in the case of ordinary sets <span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">A</span><span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">B</span><span 
+class="cmsy-10">| </span>reduces to the relative complement
+of <span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">B </span>in <span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x222A; </span><span 
+class="cmmi-10">B</span>.
+<a 
+ id="dx1-6008"></a>
+<!--l. 241--><p class="indent" >   <span 
+class="cmti-10">Convex combination. </span>By a convex combination of two vectors <span 
+class="cmmi-10">f </span>and <span 
+class="cmmi-10">g </span>is usually
+meant a linear combination of <span 
+class="cmmi-10">f </span>and <span 
+class="cmmi-10">g </span>of the form <span 
+class="cmmi-10">&#x03BB;f </span>+ (1 <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">&#x03BB;</span>)<span 
+class="cmmi-10">g</span>, in which 0 <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">&#x03BB; </span><span 
+class="msam-10">&#x2266; </span>1.
+This mode of combining <span 
+class="cmmi-10">f </span>and <span 
+class="cmmi-10">g </span>can be generalized to fuzzy sets in the following
+manner.
+<!--l. 243--><p class="indent" >   Let <span 
+class="cmmi-10">A</span>, <span 
+class="cmmi-10">B</span>, and &#x039B; be arbitrary fuzzy sets. The <span 
+class="cmti-10">convex combination </span>of <span 
+class="cmmi-10">A</span>, <span 
+class="cmmi-10">B</span>, and &#x039B;
+is denoted by (<span 
+class="cmmi-10">A,B</span>;&#x039B;) and is defined by the relation
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6009r17"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en27x.png" alt="(A,B; &#x039B;) = &#x039B;A +&#x039B; &#x2032;B
+" class="math-display" ></center></td><td class="equation-label">(17)</td></tr></table>
+                                                                  
+
+                                                                  
+<!--l. 247--><p class="nopar" >
+<!--l. 249--><p class="indent" >   where &#x039B;<span 
+class="cmsy-10">&#x2032; </span>is the complement of &#x039B;. Written out in terms membership functions,
+(<a 
+href="#x1-6009r17">17<!--tex4ht:ref: eq:convex_combination --></a>) reads
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6010r18"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en28x.png" alt="f(A,B;&#x039B;)(x) = f&#x039B;(x)fA(x)+ [1- f&#x039B;(x)]fB (x),    x &#x2208; X.
+" class="math-display" ></center></td><td class="equation-label">(18)</td></tr></table>
+<!--l. 253--><p class="nopar" >
+<!--l. 255--><p class="indent" >   A basic property of the convex combination of <span 
+class="cmmi-10">A</span>, <span 
+class="cmmi-10">B</span>, and &#x039B; is expressed
+by
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6011r19"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en29x.png" alt="A &#x2229;B  &#x2282; (A, B;&#x039B;) &#x2282; A&#x222A; B    f or all &#x039B;.
+" class="math-display" ></center></td><td class="equation-label">(19)</td></tr></table>
+<!--l. 259--><p class="nopar" >
+<!--l. 261--><p class="indent" >   This property is an immediate consequence of the inequalities
+<!--l. 263--><p class="indent" >   <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en30x.png" alt="M in[fA(x),fB (x)] &#x2266; &#x03BB;fA (x) +(1 - &#x03BB; )fB (x)
+          &#x2266; M ax[f  (x),f (x)],    x &#x2208; X             (20)
+                 A     B
+" class="math-display" ></center>
+</div>
+<!--l. 268--><p class="indent" >   which hold for all <span 
+class="cmmi-10">&#x03BB; </span>in [0<span 
+class="cmmi-10">,</span>1]. It is of interest to observe that, given any
+fuzzy set <span 
+class="cmmi-10">C </span>satisfying <span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">B </span><span 
+class="cmsy-10">&#x2282; </span><span 
+class="cmmi-10">C </span><span 
+class="cmsy-10">&#x2282; </span><span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x222A; </span><span 
+class="cmmi-10">B</span>, one can always find a fuzzy set
+&#x039B; such that <span 
+class="cmmi-10">C </span>= (<span 
+class="cmmi-10">A,B</span>;&#x039B;). The membership function of this set is given
+by
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6013r21"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en31x.png" alt="       fC(x)- fB (x)
+f&#x039B;(x) = f-(x)--f-(x),   x &#x2208; X.
+        A      B
+" class="math-display" ></center></td><td class="equation-label">(21)</td></tr></table>
+<!--l. 272--><p class="nopar" >
+<a 
+ id="dx1-6014"></a>
+<!--l. 275--><p class="indent" >   <span 
+class="cmti-10">Fuzzy relation. </span>The concept of <span 
+class="cmti-10">relation </span>(which is a generalization of that of a
+function) has a natural extension to fuzzy sets and plays an important role int the
+theory of such sets and their applications - just as it does in the case of ordinary sets.
+In the sequel, we shall merely define the notion of a fuzzy relation and touch upon a
+few related concepts.
+<!--l. 277--><p class="indent" >   Ordinarily, a relation is defined as a set of ordered pairs <span class="cite">[<a 
+href="#XHALMOS">2</a>]</span>; e.g., the set of all
+ordered pairs of real numbers <span 
+class="cmmi-10">x </span>and <span 
+class="cmmi-10">y </span>such that <span 
+class="cmmi-10">x </span><span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">y</span>. In the context of fuzzy sets, a
+<span 
+class="cmti-10">fuzzy relation in </span><span 
+class="cmmi-10">X </span>is a fuzzy set in the product space <span 
+class="cmmi-10">X </span><span 
+class="cmsy-10">&#x00D7; </span><span 
+class="cmmi-10">X</span>. For example, the
+relation denoted by <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x226B; </span><span 
+class="cmmi-10">y,   x,y </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">R</span><sup><span 
+class="cmr-7">1</span></sup>, may be regarded as a fuzzy set <span 
+class="cmmi-10">A </span>in <span 
+class="cmmi-10">R</span><sup><span 
+class="cmr-7">2</span></sup>, with
+the membership function of <span 
+class="cmmi-10">A,f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x,y</span>), having the following (subjective)
+representative values: <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">a</span></sub>(10<span 
+class="cmmi-10">,</span>5) = 0;<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(100<span 
+class="cmmi-10">,</span>10) = 0<span 
+class="cmmi-10">.</span>7;<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(100<span 
+class="cmmi-10">,</span>1) = 1;<span 
+class="cmmi-10">etc.</span>
+<!--l. 279--><p class="indent" >   More generally, one can define an <span 
+class="cmti-10">n-ary fuzzy relation </span>in <span 
+class="cmmi-10">X </span>as a fuzzy set <span 
+class="cmmi-10">A </span>in the
+product space <span 
+class="cmmi-10">X </span><span 
+class="cmsy-10">&#x00D7; </span><span 
+class="cmmi-10">X </span><span 
+class="cmsy-10">&#x00D7;</span><img 
+src="Zadeh-1965.en32x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span 
+class="cmsy-10">&#x00D7; </span><span 
+class="cmmi-10">X</span>. For such relations, the membership function is of
+the form <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en33x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">,x</span><sub><span 
+class="cmmi-7">n</span></sub>), where <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">i</span></sub> <span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">X,i </span>= 1<span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en34x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">,n</span>.
+<!--l. 281--><p class="indent" >   In the case of binary fuzzy relations, the <span 
+class="cmti-10">composition </span>of two fuzzy relations <span 
+class="cmmi-10">A </span>and
+<span 
+class="cmmi-10">B </span>is denoted by <span 
+class="cmmi-10">B </span><span 
+class="cmsy-10">&#x2218; </span><span 
+class="cmmi-10">A </span>and is defined as a fuzzy relation in <span 
+class="cmmi-10">X </span>whose membership
+function is related to those of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>by
+                                                                  
+
+                                                                  
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en35x.png" alt="fB&#x2218;A(x,y) = SupvM in[fA(x,v),fB (v,y)].
+" class="math-display" ></center>
+<!--l. 284--><p class="indent" >   Note that the operation of composition has the associative property
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en36x.png" alt="A&#x2218; (B &#x2218;C) = (A &#x2218; B)&#x2218; C.
+" class="math-display" ></center>
+<!--l. 287--><p class="indent" >   <span 
+class="cmti-10">Fuzzy sets induced by mappings. </span>Let <span 
+class="cmmi-10">T </span>be a mapping from <span 
+class="cmmi-10">X </span>to a space <span 
+class="cmmi-10">Y </span>.
+Let <span 
+class="cmmi-10">B </span>be a fuzzy set in <span 
+class="cmmi-10">Y </span>with membership function <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">y</span>). The inverse
+mapping <span 
+class="cmmi-10">T</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup> induces a fuzzy set <span 
+class="cmmi-10">A </span>in <span 
+class="cmmi-10">X </span>whose membership function is defined
+by
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6015r22"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en37x.png" alt="fA(x) = fB(y),   y &#x2208; Y
+" class="math-display" ></center></td><td class="equation-label">(22)</td></tr></table>
+<!--l. 291--><p class="nopar" >
+<!--l. 293--><p class="indent" >   for all <span 
+class="cmmi-10">x </span>in <span 
+class="cmmi-10">X </span>which are mapped by <span 
+class="cmmi-10">T </span>into <span 
+class="cmmi-10">y</span>.
+<!--l. 295--><p class="indent" >   Consider now a converse problem in which <span 
+class="cmmi-10">A </span>is a given fuzzy set in <span 
+class="cmmi-10">X</span>, and <span 
+class="cmmi-10">T</span>, as
+before, is a mapping from <span 
+class="cmmi-10">X </span>to <span 
+class="cmmi-10">Y </span>. The question is: What is the membership function
+for the fuzzy set <span 
+class="cmmi-10">B </span>in <span 
+class="cmmi-10">Y </span>which is induced by this mapping?
+<!--l. 297--><p class="indent" >   If <span 
+class="cmmi-10">T </span>is not one-one, then an ambiguity arises when two or more distinct points in
+<span 
+class="cmmi-10">X</span>, say <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub>, with different grades of membership in <span 
+class="cmmi-10">A </span>are mapped into the
+same point <span 
+class="cmmi-10">y </span>in <span 
+class="cmmi-10">Y </span>. In this case, the question is: What grade of membership in <span 
+class="cmmi-10">B</span>
+should be assigned to <span 
+class="cmmi-10">y</span>?
+<!--l. 299--><p class="indent" >   To resolve this ambiguity, we agree to assign the larger of the two grades of
+membership to <span 
+class="cmmi-10">y</span>. More generally, the membership function for <span 
+class="cmmi-10">B </span>will be defined
+by
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6016r23"></a>
+                                                                  
+
+                                                                  
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en38x.png" alt="fB (y) = M axx&#x2208;T-1(y)fA(x),    y &#x2208; Y
+" class="math-display" ></center></td><td class="equation-label">(23)</td></tr></table>
+<!--l. 303--><p class="nopar" >
+<!--l. 305--><p class="indent" >   where <span 
+class="cmmi-10">T</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup>(<span 
+class="cmmi-10">x</span>) is the set of points in <span 
+class="cmmi-10">X </span>which are mapped into <span 
+class="cmmi-10">y </span>by <span 
+class="cmmi-10">T</span>.
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-70005"></a>Convexity</h3>
+<!--l. 309--><p class="noindent" >As will be seen in the sequel, the notion of convexity can readily be extended to fuzzy
+sets in such a way as to preserve many of the properties which it has in
+the context of ordinary sets. This notion appears to be particularly useful
+in applications involving pattern classification, optimization and related
+problems.
+<!--l. 311--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                  
+
+                                                                  
+<a 
+ id="x1-70014"></a>
+                                                                  
+
+                                                                  
+
+<!--l. 312--><p class="noindent" ><img 
+src="fig4.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;4: </span><span  
+class="content">Convex and nonconvex fuzzy sets in <span 
+class="cmmi-10">E</span><sup><span 
+class="cmr-7">1</span></sup></span></div><!--tex4ht:label?: x1-70014 -->
+                                                                  
+
+                                                                  
+<!--l. 315--><p class="indent" >   </div><hr class="endfigure">
+<!--l. 317--><p class="indent" >   In what follows, we assume for concreteness that <span 
+class="cmmi-10">X </span>is a real Euclidean space
+<span 
+class="cmmi-10">E</span><sup><span 
+class="cmmi-7">n</span></sup>.
+   <h4 class="subsectionHead"><span class="titlemark">5.1   </span> <a 
+ id="x1-80005.1"></a>Definitions</h4>
+<a 
+ id="dx1-8001"></a>
+<!--l. 322--><p class="noindent" ><span 
+class="cmti-10">Convexity. </span>A fuzzy set <span 
+class="cmmi-10">A </span>is <span 
+class="cmti-10">convex </span>if and only if the sets &#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub> defined by
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8002r24"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en39x.png" alt="&#x0393; &#x03B1; = {x|fA(x) &#x2267; &#x03B1;}
+" class="math-display" ></center></td><td class="equation-label">(24)</td></tr></table>
+<!--l. 326--><p class="nopar" >
+<!--l. 328--><p class="indent" >   are convex for all <span 
+class="cmmi-10">&#x03B1; </span>in the interval <img 
+src="Zadeh-1965.en40x.png" alt="(0,1]"  class="left" align="middle">.
+<!--l. 330--><p class="indent" >   An alternative and more direct definition of convexity is the following
+<span class="footnote-mark"><a 
+href="Zadeh-1965.en6.html#fn5x0"><sup class="textsuperscript">5</sup></a></span><a 
+ id="x1-8003f5"></a>: <span 
+class="cmmi-10">A </span>is
+<span 
+class="cmti-10">convex </span>if and only if
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8004r25"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en41x.png" alt="fA[&#x03BB;x1 + (1 - &#x03BB;)x2] &#x2267; M in[fA(x1),fA (x2)]
+" class="math-display" ></center></td><td class="equation-label">(25)</td></tr></table>
+<!--l. 334--><p class="nopar" >
+<!--l. 336--><p class="indent" >   for all <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> in <span 
+class="cmmi-10">X </span>and all <span 
+class="cmmi-10">&#x03BB; </span>in [0<span 
+class="cmmi-10">,</span>1]. Note that this definition does not imply
+that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) must be a convex function of <span 
+class="cmmi-10">x</span>. This is illustrated in Figure&#x00A0;<a 
+href="#x1-70014">4<!--tex4ht:ref: img:fig4 --></a> for
+<span 
+class="cmmi-10">n </span>= 1.
+                                                                  
+
+                                                                  
+<!--l. 338--><p class="indent" >   To show the equivalence between the above definitions note that if <span 
+class="cmmi-10">A </span>is convex in
+the sense of the first definition and <span 
+class="cmmi-10">&#x03B1; </span>= <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub>), than <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2208; </span>&#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub> and
+<span 
+class="cmmi-10">&#x03BB;x</span><sub><span 
+class="cmr-7">1</span></sub> + (1 <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03BB;</span>)<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2208; </span>&#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub> by the convexity of &#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub>. Hence
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en42x.png" alt="fA [&#x03BB;x1 + (1 - &#x03BB;)x2] &#x2267; &#x03B1; = fA(x1) = M in[fA(x1),fA(x2)].
+" class="math-display" ></center>
+<!--l. 341--><p class="indent" >   Conversely, if <span 
+class="cmmi-10">A </span>is convex in the sense of the second definition and <span 
+class="cmmi-10">&#x03B1; </span>= <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub>),
+than &#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub> may be regarded as the set of all points <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> for which <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub>). In
+virtue of (<a 
+href="#x1-8004r25">25<!--tex4ht:ref: eq:convex --></a>), every point of the form <span 
+class="cmmi-10">&#x03BB;x</span><sub><span 
+class="cmr-7">1</span></sub> + (1 <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03BB;</span>)<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub><span 
+class="cmmi-10">,</span>0 <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">&#x03BB; </span><span 
+class="msam-10">&#x2266; </span>1, is also in &#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub> and
+hence &#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub> is a convex set. Q.E.D.
+<!--l. 343--><p class="indent" >   A basic property of convex fuzzy sets is expressed by the
+<!--l. 345--><p class="indent" >   Theorem. <span 
+class="cmti-10">If </span><span 
+class="cmmi-10">A </span><span 
+class="cmti-10">and </span><span 
+class="cmmi-10">B </span><span 
+class="cmti-10">are convex, so is their intersection.</span>
+<!--l. 347--><p class="indent" >   <span 
+class="cmti-10">Proof </span>: Let <span 
+class="cmmi-10">C </span>= <span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">B</span>. Then <table 
+class="multline"><tr><td><img 
+src="Zadeh-1965.en43x.png" alt="fC[&#x03BB;x1 + (1- &#x03BB;)x2]
+                    = M in[f [&#x03BB;x  + (1- &#x03BB;)x ],f [&#x03BB;x + (1- &#x03BB;)x ]].
+                            A   1         2  B   1         2
+" ></td><td class="equation-label"><br />(26)<br /></td></tr></table>
+<!--l. 353--><p class="indent" >   Now, since <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>are convex
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8006r27"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en44x.png" alt="fA[&#x03BB;x1 + (1- &#x03BB;)x2] &#x2267; M in [fA(x1),fA(x2)]
+fB[&#x03BB;x1 + (1 - &#x03BB;)x2] &#x2267; M in[fB(x1),fB (x2)]
+" class="math-display" ></center></td><td class="equation-label">(27)</td></tr></table>
+<!--l. 360--><p class="nopar" >
+<!--l. 362--><p class="indent" >   and hence
+<!--l. 364--><p class="indent" >   <table 
+class="multline"><tr><td><img 
+src="Zadeh-1965.en45x.png" alt="f [&#x03BB;x  + (1- &#x03BB;)x ]
+ C   1         2
+                    &#x2267; M in [M in[fA (x1),fA(x2)],M in[fB (x1),fB(x2)]]
+" ></td><td class="equation-label"><br />(28)<br /></td></tr></table>
+<!--l. 369--><p class="indent" >   or equivalently
+<!--l. 371--><p class="indent" >   <table 
+class="multline"><tr><td><img 
+src="Zadeh-1965.en46x.png" alt="fC[&#x03BB;x1 + (1- &#x03BB;)x2]
+
+                    &#x2267; M in [M in[fA (x1),fB(x2)],M in[fA (x1),fB(x2)]]
+" ></td><td class="equation-label"><br />(29)<br /></td></tr></table>
+<!--l. 376--><p class="indent" >   and thus
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8009r30"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en47x.png" alt="fC[&#x03BB;x1 + (1- &#x03BB;)x2] &#x2267; M in [fC(x1),fC (x2)]. Q. E.D.
+" class="math-display" ></center></td><td class="equation-label">(30)</td></tr></table>
+<!--l. 380--><p class="nopar" >
+<a 
+ id="dx1-8010"></a>
+<!--l. 383--><p class="indent" >   <span 
+class="cmti-10">Boundedness. </span>A fuzzy set <span 
+class="cmmi-10">A </span>is <span 
+class="cmti-10">bounded </span>if and only if the sets &#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub> = <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">&#x03B1;</span><span 
+class="cmsy-10">}</span>
+are bounded for all <span 
+class="cmmi-10">&#x03B1; &#x003E; </span>0; that is, for every <span 
+class="cmmi-10">&#x03B1; &#x003E; </span>0 the exists a finite <span 
+class="cmmi-10">R</span>(<span 
+class="cmmi-10">&#x03B1;</span>) such that
+<span 
+class="cmsy-10">&#x2225;</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">&#x2225;</span><span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">R</span>(<span 
+class="cmmi-10">&#x03B1;</span>) for all x in &#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub>.
+<!--l. 385--><p class="indent" >   If <span 
+class="cmmi-10">A </span>is a bounded set, then for each <span 
+class="cmmi-10">&#x03F5; &#x003E; </span>0 then exists a hyperplane such that
+<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">&#x03F5; </span>for all <span 
+class="cmmi-10">x </span>on the side of <span 
+class="cmmi-10">H </span>which does not contain the origin. For, consider
+the set &#x0393;<sub><span 
+class="cmmi-7">&#x03F5;</span></sub> = <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">&#x03F5;</span><span 
+class="cmsy-10">}</span>. By hypothesis, this set is contained in a sphere <span 
+class="cmmi-10">S </span>of
+radius <span 
+class="cmmi-10">R</span>(<span 
+class="cmmi-10">&#x03F5;</span>). Let <span 
+class="cmmi-10">H </span>be any hyperplane supporting <span 
+class="cmmi-10">S</span>. Then, all points on the side of
+<span 
+class="cmmi-10">H </span>which does not contain the origin lie outside or on <span 
+class="cmmi-10">S</span>, and hence for all such points
+<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">&#x03F5;</span>.
+<!--l. 387--><p class="indent" >   Lemma. <span 
+class="cmti-10">Let </span><span 
+class="cmmi-10">A </span><span 
+class="cmti-10">be a bounded fuzzy set and let </span><span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">Sup</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>)<span 
+class="cmti-10">. (</span><span 
+class="cmmi-10">M </span><span 
+class="cmti-10">will be referred</span>
+<span 
+class="cmti-10">to as the </span>maximal grade <span 
+class="cmti-10">in </span><span 
+class="cmmi-10">A</span><span 
+class="cmti-10">.) Then there is at least one point </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> <span 
+class="cmti-10">at which</span>
+<span 
+class="cmmi-10">M </span><span 
+class="cmti-10">is essentially attained in the sense that, for each </span><span 
+class="cmmi-10">&#x03F5; &#x003E; </span>0<span 
+class="cmti-10">, every spherical</span>
+<span 
+class="cmti-10">neighborhood of </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> <span 
+class="cmti-10">contains points in the set </span><span 
+class="cmmi-10">Q</span>(<span 
+class="cmmi-10">&#x03F5;</span>) = <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">M </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03F5;</span><span 
+class="cmsy-10">}</span>
+<span 
+class="cmti-10">.</span>
+                                                                  
+
+                                                                  
+<!--l. 389--><p class="indent" >   <span 
+class="cmti-10">Proof.</span><span class="footnote-mark"><a 
+href="Zadeh-1965.en7.html#fn6x0"><sup class="textsuperscript">6</sup></a></span><a 
+ id="x1-8011f6"></a> 
+Consider a nested sequence of bounded sets &#x0393;<sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span>&#x0393;<sub><span 
+class="cmr-7">2</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en48x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span>, where
+&#x0393;<sub><span 
+class="cmmi-7">n</span></sub> = <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">M </span><span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">M&#x2215;</span>(<span 
+class="cmmi-10">n </span>+ 1)<span 
+class="cmsy-10">}</span><span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x00A0;n </span>= <span 
+class="cmmi-10">q,</span>1<span 
+class="cmmi-10">,</span>2<span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en49x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span>. Note that &#x0393;<sub><span 
+class="cmmi-7">n</span></sub> is nonempty for all
+finite <span 
+class="cmmi-10">n </span>as a consequence of the definition of <span 
+class="cmmi-10">M </span>as <span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">Sup</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>). (We assume that
+<span 
+class="cmmi-10">M &#x003E; </span>0.)
+<!--l. 391--><p class="indent" >   Let <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">n</span></sub> be an arbitrarily chosen point in &#x0393;<sub><span 
+class="cmmi-7">n</span></sub><span 
+class="cmmi-10">,n </span>= 1<span 
+class="cmmi-10">,</span>2<span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en50x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span>. Then, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,x</span><sub><span 
+class="cmr-7">2</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en51x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span>, is a
+sequence of points in a closed bounded set &#x0393;<sub><span 
+class="cmr-7">1</span></sub>. By the Bolzano-Weierstrass theorem,
+this sequence must have at least one limit point, say <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>, in &#x0393;<sub><span 
+class="cmr-7">1</span></sub>. Consequently, every
+spherical neighborhood of <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> will contain infinitely many points from from the
+sequence <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,x</span><sub><span 
+class="cmr-7">2</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en52x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span>, and, more particularly, from the subsequence <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">N</span><span 
+class="cmr-7">+1</span></sub><span 
+class="cmmi-10">,x</span><sub><span 
+class="cmmi-7">N</span><span 
+class="cmr-7">+2</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en53x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span>,
+where <span 
+class="cmmi-10">N </span><span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">M&#x2215;&#x03F5;</span>. Since the points of this subsequence fall within the set
+<span 
+class="cmmi-10">Q</span>(<span 
+class="cmmi-10">&#x03F5;</span>) = <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">M </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03F5;</span><span 
+class="cmsy-10">}</span>, the lemma is proved.
+<!--l. 393--><p class="indent" >   <span 
+class="cmti-10">Strict and strong convexity. </span>A fuzzy set <span 
+class="cmmi-10">A </span>is <span 
+class="cmti-10">strictly convex </span>if the sets
+&#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub><span 
+class="cmmi-10">,</span>0 <span 
+class="cmmi-10">&#x003C; &#x03B1; </span><span 
+class="msam-10">&#x2266; </span>1 are strictly convex (that is, if the midpoint of any two distinct points
+in &#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub> lies in the interior of &#x0393;<sub><span 
+class="cmmi-7">&#x03B1;</span></sub>). Note that this definition reduces to that of strict
+convexity for ordinary sets when <span 
+class="cmmi-10">A </span>is such a set.
+<!--l. 395--><p class="indent" >   A fuzzy set <span 
+class="cmmi-10">A </span>is <span 
+class="cmti-10">strongly convex </span>if, for any two distinct points <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub>, and any
+<span 
+class="cmmi-10">&#x03BB; </span>in the open interval (0<span 
+class="cmmi-10">,</span>1)
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en54x.png" alt="fA[&#x03BB;x1 + (1- &#x03BB;x2] &#x003E; M in[fA (x1),fA(x2)].
+" class="math-display" ></center>
+<!--l. 398--><p class="indent" >   Note that strong convexity does not imply strict convexity or vice-versa. Note also
+that if <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>are bounded, so is their union and intersection. Similarly, if <span 
+class="cmmi-10">A</span>
+and <span 
+class="cmmi-10">B </span>are strictly (strongly) convex, their intersection is strictly (strongly)
+convex.
+<!--l. 400--><p class="indent" >   Let <span 
+class="cmmi-10">A </span>be a convex fuzzy set and let <span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">Sup</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>). If <span 
+class="cmmi-10">A </span>is bounded, then, as
+shown above, either <span 
+class="cmmi-10">M </span>is attained for some <span 
+class="cmmi-10">x</span>, say <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>, or there is at least one point <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>
+at which <span 
+class="cmmi-10">M </span>is essentially attained in the sense that, for each <span 
+class="cmmi-10">&#x03F5; &#x003E; </span>0, every spherical
+neighborhood of <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> contains points in the set <span 
+class="cmmi-10">Q</span>(<span 
+class="cmmi-10">&#x03F5;</span>) = <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">M </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">F</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">&#x03F5;</span><span 
+class="cmsy-10">}</span>. In
+particular, if <span 
+class="cmmi-10">A </span>is strongly convex and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> is attained, then <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> is unique. For, if
+<span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>) and <span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub>), with <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">&#x2260;</span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>, then <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmmi-10">&#x003E; M </span>for <span 
+class="cmmi-10">x </span>= 0<span 
+class="cmmi-10">.</span>5<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> + 0<span 
+class="cmmi-10">.</span>5<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub>,
+which contradicts <span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">Max</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>).
+<!--l. 402--><p class="indent" >   More generally, let <span 
+class="cmmi-10">C</span>(<span 
+class="cmmi-10">A</span>) be the set of all points in <span 
+class="cmmi-10">X </span>at which <span 
+class="cmmi-10">M </span>is essentially
+attained. This set will be referred to as the <span 
+class="cmti-10">core </span>of <span 
+class="cmmi-10">A</span>. In the case of convex fuzzy
+sets, we can assert the following property of <span 
+class="cmmi-10">C</span>(<span 
+class="cmmi-10">A</span>).
+<!--l. 404--><p class="indent" >   Theorem. <span 
+class="cmti-10">If </span><span 
+class="cmmi-10">A </span><span 
+class="cmti-10">is a convex fuzzy set, then its core is a convex set. Proof. </span>It will
+suffice to show that if <span 
+class="cmmi-10">M </span>is essentially attained at <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">&#x2260;</span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>, then it is also
+essentially attained at all <span 
+class="cmmi-10">x </span>of the form <span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">&#x03BB;x</span><sub><span 
+class="cmr-7">0</span></sub> + (1 <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03BB;</span>)<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x00A0;</span>0 <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">&#x03BB; </span><span 
+class="msam-10">&#x2266; </span>1.
+                                                                  
+
+                                                                  
+<!--l. 407--><p class="indent" >   To the end, let <span 
+class="cmmi-10">P </span>be a cylinder of radius <span 
+class="cmmi-10">&#x03F5; </span>with the line passing through <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> and
+<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> as its axis. Let <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub><span 
+class="cmsy-10">&#x2032; </span>be a point in a sphere of radius <span 
+class="cmmi-10">&#x03F5; </span>centering on <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmsy-10">&#x2032; </span>be a
+point in a sphere of radius <span 
+class="cmmi-10">&#x03F5; </span>centering on <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> such that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub><span 
+class="cmsy-10">&#x2032;</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">M </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03F5; </span>and
+<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmsy-10">&#x2032;</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">M </span><span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">&#x03F5;</span>. Then, by the convexity of <span 
+class="cmmi-10">A</span>, for any point <span 
+class="cmmi-10">u </span>on the segment <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub><span 
+class="cmsy-10">&#x2032;</span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmsy-10">&#x2032;</span>
+must be less than or equal to <span 
+class="cmmi-10">&#x03F5;</span>, since <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub><span 
+class="cmsy-10">&#x2032;</span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmsy-10">&#x2032; </span>lies in <span 
+class="cmmi-10">P</span>. Consequently, a sphere of
+radius <span 
+class="cmmi-10">&#x03F5; </span>centering n <span 
+class="cmmi-10">x </span>will contain at least one point of the segment <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub><span 
+class="cmsy-10">&#x2032;</span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmsy-10">&#x2032;</span>
+and hence will contain at leas one point, say <span 
+class="cmmi-10">w</span>, at which <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">w</span>) <span 
+class="msam-10">&#x2267; </span><span 
+class="cmmi-10">M </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03F5;</span>.
+This establishes that <span 
+class="cmmi-10">M </span>is essentially attained at <span 
+class="cmmi-10">x </span>and thus proves the
+theorem.
+<!--l. 409--><p class="indent" >   Corollary. <span 
+class="cmti-10">If </span><span 
+class="cmmi-10">X </span>= <span 
+class="cmmi-10">E</span><sup><span 
+class="cmr-7">1</span></sup> <span 
+class="cmti-10">and </span><span 
+class="cmmi-10">A </span><span 
+class="cmti-10">is strongly convex, then the point at which </span><span 
+class="cmmi-10">M </span><span 
+class="cmti-10">is</span>
+<span 
+class="cmti-10">essentially attained is unique.</span>
+<!--l. 411--><p class="indent" >   <span 
+class="cmti-10">Shadow of a fuzzy set. </span>Let <span 
+class="cmmi-10">A </span>be a fuzzy set in <span 
+class="cmmi-10">E</span><sup><span 
+class="cmmi-7">n</span></sup> with membership function
+<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) = <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><img 
+src="Zadeh-1965.en55x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">,x</span><sub><span 
+class="cmmi-7">n</span></sub>). For notational simplicity, the notion of the <span 
+class="cmti-10">shadow</span>
+(projection) of <span 
+class="cmmi-10">A </span>on a hyperplane <span 
+class="cmmi-10">H </span>will be defined below for the special case where
+<span 
+class="cmmi-10">H </span>is a coordinate hyperplane, e.g., <span 
+class="cmmi-10">H </span>= <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> = 0<span 
+class="cmsy-10">}</span>.
+<!--l. 413--><p class="indent" >   Specifically, the <span 
+class="cmti-10">shadow </span>of <span 
+class="cmmi-10">A </span>on <span 
+class="cmmi-10">H </span>= <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> = 0<span 
+class="cmsy-10">} </span>is defined to be a fuzzy set
+<span 
+class="cmmi-10">S</span><sub><span 
+class="cmmi-7">h</span></sub>(<span 
+class="cmmi-10">A</span>) in <span 
+class="cmmi-10">E</span><sup><span 
+class="cmmi-7">n</span><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup> with <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">S</span><sub><span 
+class="cmmi-5">H</span></sub><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">A</span><span 
+class="cmr-7">)</span></sub>(<span 
+class="cmmi-10">x</span>) given by
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en56x.png" alt="fS (A)(x ) = fS (A )(x2,&#x22C5;&#x22C5;&#x22C5;,xn) = Supx fA(X1,&#x22C5;&#x22C5;&#x22C5;,Xn ).
+  H          H                   1
+" class="math-display" ></center>
+<!--l. 416--><p class="indent" >   Note that this definition is consistent with (<a 
+href="#x1-6016r23">23<!--tex4ht:ref: eq:b_membership --></a>).
+<!--l. 418--><p class="indent" >   When <span 
+class="cmmi-10">A </span>is a convex fuzzy set, the following property of <span 
+class="cmmi-10">S</span><sub><span 
+class="cmmi-7">H</span></sub>(<span 
+class="cmmi-10">A</span>) is an immediate
+consequence of the above definition: if <span 
+class="cmmi-10">A </span>is a convex fuzzy set, then its shadow on
+any hyperplane is also a convex fuzzy set.
+<!--l. 420--><p class="indent" >   An interesting property of the shadows of two convex fuzzy sets is expressed by
+the following implication.
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en57x.png" alt="SH(A ) = SH (B ) for all H &#x21D2; A = B.
+" class="math-display" ></center>
+<!--l. 423--><p class="indent" >   To prove this assertion,<span class="footnote-mark"><a 
+href="Zadeh-1965.en8.html#fn7x0"><sup class="textsuperscript">7</sup></a></span><a 
+ id="x1-8012f7"></a> 
+it is sufficient to show that if there exists a point, say <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>, such that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>)<span 
+class="cmmi-10">&#x2260;</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>),
+                                                                  
+
+                                                                  
+then their exists a hyperplane <span 
+class="cmmi-10">H </span>such that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">S</span><sub><span 
+class="cmmi-5">H</span></sub><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">A</span><span 
+class="cmr-7">)</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub><sup><span 
+class="cmsy-7">*</span></sup>)<span 
+class="cmmi-10">&#x2260;</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">S</span><sub><span 
+class="cmmi-5">H</span></sub><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">B</span><span 
+class="cmr-7">)</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub><sup><span 
+class="cmsy-7">*</span></sup>), where <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub><sup><span 
+class="cmsy-7">*</span></sup> is
+the projection of <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> on <span 
+class="cmmi-10">H</span>.
+<!--l. 425--><p class="indent" >   Suppose that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>) = <span 
+class="cmmi-10">&#x03B1; &#x003E; f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>) = <span 
+class="cmmi-10">&#x03B2;</span>. Since <span 
+class="cmmi-10">B </span>is a convex fuzzy set, the set
+&#x0393;<sub><span 
+class="cmmi-7">&#x03B2;</span></sub> = <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmmi-10">&#x003E; &#x03B2;</span><span 
+class="cmsy-10">} </span>is convex, and hence there exists a hyperplane <span 
+class="cmmi-10">F </span>supporting
+&#x0393;<sub><span 
+class="cmmi-7">&#x03B2;</span></sub> and passing through <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub>. Let <span 
+class="cmmi-10">H </span>be a hyperplane orthogonal to <span 
+class="cmmi-10">F</span>, and
+let <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub><sup><span 
+class="cmsy-7">*</span></sup> be the projection of <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">0</span></sub> on <span 
+class="cmmi-10">H</span>. Then, since <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">&#x03B2; </span>for all <span 
+class="cmmi-10">x </span>on
+<span 
+class="cmmi-10">F</span>, we have <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">S</span><sub><span 
+class="cmmi-5">H</span></sub><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">B</span><span 
+class="cmr-7">)</span></sub>(<span 
+class="cmmi-10">X</span><sub><span 
+class="cmr-7">0</span></sub><sup><span 
+class="cmsy-7">*</span></sup>)<span 
+class="cmmi-10">&#x2260;</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">S</span><sub><span 
+class="cmmi-5">H</span></sub><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">A</span><span 
+class="cmr-7">)</span></sub>(<span 
+class="cmmi-10">X</span><sub><span 
+class="cmr-7">0</span></sub><sup><span 
+class="cmsy-7">*</span></sup>), and similarly for the case where
+<span 
+class="cmmi-10">&#x03B1; &#x003C; &#x03B2;</span>.
+<!--l. 427--><p class="indent" >   A somewhat more general form of the above assertion is the following: Let <span 
+class="cmmi-10">A</span>, but
+not necessarily <span 
+class="cmmi-10">B</span>, be a convex fuzzy set, and let <span 
+class="cmmi-10">S</span><sub><span 
+class="cmmi-7">H</span></sub>(<span 
+class="cmmi-10">X</span>) = <span 
+class="cmmi-10">S</span><sub><span 
+class="cmmi-7">H</span></sub>(<span 
+class="cmmi-10">B</span>) for all <span 
+class="cmmi-10">H</span>. Then
+<span 
+class="cmmi-10">A </span>= <span 
+class="cmmi-10">convB</span>, where <span 
+class="cmmi-10">convB </span>is the convex hull of <span 
+class="cmmi-10">B</span>, that is, the smallest convex
+convex set containing <span 
+class="cmmi-10">B</span>. More generally, <span 
+class="cmmi-10">S</span><sub><span 
+class="cmmi-7">H</span></sub>(<span 
+class="cmmi-10">A</span>) = <span 
+class="cmmi-10">S</span><sub><span 
+class="cmmi-7">H</span></sub>(<span 
+class="cmmi-10">B</span>) for all <span 
+class="cmmi-10">H </span>implies
+<span 
+class="cmmi-10">convA </span>= <span 
+class="cmmi-10">convB</span>.
+<!--l. 429--><p class="indent" >   <span 
+class="cmti-10">Separation of convex fuzzy sets. </span>The classical separation theorem for ordinary
+convex sets states, in essence, that if <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>are disjoint convex sets, then there
+exists a separating hyperplane <span 
+class="cmmi-10">H </span>such that <span 
+class="cmmi-10">A </span>is on one side of <span 
+class="cmmi-10">H </span>and <span 
+class="cmmi-10">B </span>is on the
+other side.
+<!--l. 431--><p class="indent" >   It is natural to inquire if this theorem can be extended to convex fuzzy sets,
+without requiring that <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>be disjoint, since the condition of disjointness is
+much too restrictive in the case of fuzzy sets. It turns out, as will be seen in the
+sequel, that the answer to this question is in the affirmative.
+<!--l. 433--><p class="indent" >   As a preliminary, we shall have to make a few definitions. Specifically,
+let <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>be two bounded fuzzy sets and let <span 
+class="cmmi-10">H </span>be a hypersurface in <span 
+class="cmmi-10">E</span><sup><span 
+class="cmmi-7">b</span></sup>
+defined by an equation <span 
+class="cmmi-10">h</span>(<span 
+class="cmmi-10">x</span>) = 0, with all points for which <span 
+class="cmmi-10">h</span>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2267; </span>0 being
+on one side of <span 
+class="cmmi-10">H </span>and all points for which <span 
+class="cmmi-10">h</span>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span>0 being on the other
+side.<span class="footnote-mark"><a 
+href="Zadeh-1965.en9.html#fn8x0"><sup class="textsuperscript">8</sup></a></span><a 
+ id="x1-8013f8"></a> 
+Let <span 
+class="cmmi-10">K</span><sub><span 
+class="cmmi-7">H</span></sub> be a number dependent on <span 
+class="cmmi-10">H </span>such that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">K</span><sub><span 
+class="cmmi-7">H</span></sub> on one side of <span 
+class="cmmi-10">H </span>and
+<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">K</span><sub><span 
+class="cmmi-7">H</span></sub> on the other side. Let <span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">H</span></sub> be <span 
+class="cmmi-10">InfK</span><sub><span 
+class="cmmi-7">H</span></sub>. The number <span 
+class="cmmi-10">D</span><sub><span 
+class="cmmi-7">H</span></sub> = 1 <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">H</span></sub> will
+be called the <span 
+class="cmti-10">degree of separation of </span><span 
+class="cmmi-10">A </span><span 
+class="cmti-10">and </span><span 
+class="cmmi-10">B </span><span 
+class="cmti-10">by </span><span 
+class="cmmi-10">H</span>.
+<!--l. 435--><p class="indent" >   In general, one is concerned not with a given hypersurface <span 
+class="cmmi-10">H</span>, but with a family of
+hypersurfaces <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">H</span><sub><span 
+class="cmmi-7">&#x03BB;</span></sub><span 
+class="cmsy-10">}</span>, with <span 
+class="cmmi-10">&#x03BB; </span>ranging over, say, <span 
+class="cmmi-10">E</span><sup><span 
+class="cmmi-7">m</span></sup>. The problem, then, is to
+find a member of this family which realizes the highest possible degree of
+separation.
+<!--l. 437--><p class="indent" >   A special case of this problem is one where the <span 
+class="cmmi-10">H</span><sub><span 
+class="cmmi-7">&#x03BB;</span></sub> are hyperplanes in <span 
+class="cmmi-10">E</span><sup><span 
+class="cmmi-7">n</span></sup>, with <span 
+class="cmmi-10">&#x03BB;</span>
+ranging over <span 
+class="cmmi-10">E</span><sup><span 
+class="cmmi-7">n</span></sup>. In this case, we define the <span 
+class="cmti-10">degree of separability </span>of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>by the
+relation
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8014r31"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en58x.png" alt="D = 1- M--
+" class="math-display" ></center></td><td class="equation-label">(31)</td></tr></table>
+<!--l. 441--><p class="nopar" >
+<!--l. 443--><p class="indent" >   where
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8015r32"></a>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en59x.png" alt="---
+M  = InfHMH
+" class="math-display" ></center></td><td class="equation-label">(32)</td></tr></table>
+<!--l. 447--><p class="nopar" >
+<!--l. 449--><p class="indent" >   with the subscript <span 
+class="cmmi-10">&#x03BB; </span>omitted for simplicity.
+<!--l. 451--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                  
+
+                                                                  
+<a 
+ id="x1-80165"></a>
+                                                                  
+
+                                                                  
+
+<!--l. 452--><p class="noindent" ><img 
+src="fig5.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;5: </span><span  
+class="content">Illustration of the separation theorem for fuzzy sets in <span 
+class="cmmi-10">E</span><sup><span 
+class="cmr-7">1</span></sup></span></div><!--tex4ht:label?: x1-80165 -->
+                                                                  
+
+                                                                  
+<!--l. 455--><p class="indent" >   </div><hr class="endfigure">
+<!--l. 457--><p class="indent" >   Among the various assertions that can be made concerning <span 
+class="cmmi-10">D</span>, the following
+statement<span class="footnote-mark"><a 
+href="Zadeh-1965.en10.html#fn9x0"><sup class="textsuperscript">9</sup></a></span><a 
+ id="x1-8017f9"></a> 
+is, in effect, an extension of the separation theorem to convex fuzzy sets.
+<!--l. 459--><p class="indent" >   Theorem. <span 
+class="cmti-10">Let </span><span 
+class="cmmi-10">A </span><span 
+class="cmti-10">and </span><span 
+class="cmmi-10">B </span><span 
+class="cmti-10">be bounded convex fuzzy sets in </span><span 
+class="cmmi-10">E</span><sup><span 
+class="cmmi-7">n</span></sup><span 
+class="cmti-10">, with maximal grades</span>
+<span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">A</span></sub> <span 
+class="cmti-10">and </span><span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">B</span></sub><span 
+class="cmti-10">, respectively </span>[<span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">A</span></sub> = <span 
+class="cmmi-10">Sup</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>)<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x00A0;M</span><sub><span 
+class="cmmi-7">B</span></sub> = <span 
+class="cmmi-10">Sup</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>)]<span 
+class="cmti-10">. Let </span><span 
+class="cmmi-10">M </span><span 
+class="cmti-10">be the</span>
+<span 
+class="cmti-10">maximal grade for the intersection </span><span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">B</span><span 
+class="cmmi-10">&#x00A0;</span>(<span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">Sup</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">Min</span>[<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>)<span 
+class="cmmi-10">,f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>)])<span 
+class="cmti-10">. Then</span>
+<span 
+class="cmmi-10">D </span>= 1 <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">M</span><span 
+class="cmti-10">.</span>
+<!--l. 461--><p class="indent" >   <span 
+class="cmti-10">Comment. </span>In plain words, the theorem states that the highest degree of
+separation of two convex fuzzy sets <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B </span>that can be achieved with a hyperplane
+in <span 
+class="cmmi-10">E</span><sup><span 
+class="cmmi-7">n</span></sup> is one minus the maximal grade in the intersection <span 
+class="cmmi-10">A</span><span 
+class="cmsy-10">&#x2229;</span><span 
+class="cmmi-10">B</span>. This is illustrated in
+Figure&#x00A0;<a 
+href="#x1-80165">5<!--tex4ht:ref: img:fig5 --></a> for <span 
+class="cmmi-10">n </span>= 1.
+<!--l. 463--><p class="indent" >   <span 
+class="cmti-10">Proof. </span>It is convenient to consider separately the following two cases: (1)
+<span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">Min</span>(<span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">A</span></sub><span 
+class="cmmi-10">,M</span><sub><span 
+class="cmmi-7">B</span></sub>) and (2) <span 
+class="cmmi-10">M &#x003C; Min</span>(<span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">A</span></sub><span 
+class="cmmi-10">,M</span><sub><span 
+class="cmmi-7">B</span></sub>). Note that the latter case rules
+out <span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x2282; </span><span 
+class="cmmi-10">B </span>or <span 
+class="cmmi-10">B </span><span 
+class="cmsy-10">&#x2282; </span><span 
+class="cmmi-10">A</span>.
+<!--l. 465--><p class="indent" >   <span 
+class="cmti-10">Case 1. </span>For concreteness, assume that <span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">A</span></sub> <span 
+class="cmmi-10">&#x003C; M</span><sub><span 
+class="cmmi-7">B</span></sub>, so that <span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">A</span></sub>. Then, by
+the property of bounded sets already stated there exists a hyperplane <span 
+class="cmmi-10">H </span>such that
+<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M </span>for all <span 
+class="cmmi-10">X </span>on one side of <span 
+class="cmmi-10">H</span>. On the other side of <span 
+class="cmmi-10">Hf</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M </span>because
+<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">A</span></sub> = <span 
+class="cmmi-10">M </span>for all <span 
+class="cmmi-10">x</span>.
+<!--l. 467--><p class="indent" >   It remains to be shown that there do not exist an <span 
+class="cmmi-10">M</span><span 
+class="cmsy-10">&#x2032; </span><span 
+class="cmmi-10">&#x003C; M </span>and a hyperplane <span 
+class="cmmi-10">H</span><span 
+class="cmsy-10">&#x2032;</span>
+such that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M</span><span 
+class="cmsy-10">&#x2032; </span>on one side of <span 
+class="cmmi-10">H</span><span 
+class="cmsy-10">&#x2032; </span>and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M</span><span 
+class="cmsy-10">&#x2032; </span>on other side.
+<!--l. 469--><p class="indent" >   This follows at once from the following observation. Suppose that such <span 
+class="cmmi-10">H</span><span 
+class="cmsy-10">&#x2032; </span>and <span 
+class="cmmi-10">M</span><span 
+class="cmsy-10">&#x2032;</span>
+exist, and assume for concreteness that the core of <span 
+class="cmmi-10">A </span>(that is, the set of points at
+which <span 
+class="cmmi-10">M</span><sub><span 
+class="cmmi-7">A</span></sub> = <span 
+class="cmmi-10">M </span>is essentially attained) is on the plus side of <span 
+class="cmmi-10">H</span><span 
+class="cmsy-10">&#x2032;</span>. This rules out the
+possibility that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M</span><span 
+class="cmsy-10">&#x2032; </span>for all <span 
+class="cmmi-10">x </span>on the plus side of <span 
+class="cmmi-10">H</span><span 
+class="cmsy-10">&#x2032;</span>, and hence necessitates
+that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M</span><span 
+class="cmsy-10">&#x2032; </span>for all <span 
+class="cmmi-10">x </span>on the minus side of <span 
+class="cmmi-10">H</span><span 
+class="cmsy-10">&#x2032;</span>, and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M</span><span 
+class="cmsy-10">&#x2032; </span>for
+all <span 
+class="cmmi-10">x </span>on the plus side of <span 
+class="cmmi-10">H</span><span 
+class="cmsy-10">&#x2032;</span>. Consequently, over all <span 
+class="cmmi-10">x </span>on the plus side of
+<span 
+class="cmmi-10">H</span><span 
+class="cmsy-10">&#x2032;</span>
+   <center class="math-display" >
+<img 
+src="Zadeh-1965.en60x.png" alt="                         &#x2032;
+SupxM in[FA(x),fB(x)] &#x2266; M " class="math-display" ></center> and
+likewise for all <span 
+class="cmmi-10">x </span>on the minus side of <span 
+class="cmmi-10">H</span><span 
+class="cmsy-10">&#x2032;</span>. This implies that, over all <span 
+class="cmmi-10">x </span>in
+<span 
+class="cmmi-10">X</span>, <span 
+class="cmmi-10">Sup</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">Min</span>[<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>)<span 
+class="cmmi-10">,f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>)] <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M</span><span 
+class="cmsy-10">&#x2032;</span>, which contradicts the assumption that
+<span 
+class="cmmi-10">Sup</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">Min</span>[<span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>)<span 
+class="cmmi-10">,f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>)] = <span 
+class="cmmi-10">M &#x003E; M</span><span 
+class="cmsy-10">&#x2032;</span>.
+<!--l. 473--><p class="indent" >   <span 
+class="cmti-10">Case 2. </span>Consider the convex sets &#x0393;<sub><span 
+class="cmmi-7">A</span></sub> = <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmmi-10">&#x003E; M</span><span 
+class="cmsy-10">} </span>and &#x0393;<sub><span 
+class="cmmi-7">B</span></sub> = <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="cmmi-10">&#x003E; M</span><span 
+class="cmsy-10">}</span>.
+These sets are nonempty and disjoint, for if they were not there would be a point, say
+<span 
+class="cmmi-10">u</span>, such that <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">u</span>) <span 
+class="cmmi-10">&#x003E; M </span>and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">u</span>) <span 
+class="cmmi-10">&#x003E; M</span>, and hence <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span><span 
+class="cmsy-7">&#x2229;</span><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">u</span>) <span 
+class="cmmi-10">&#x003E; M</span>, which
+contradicts the assumption that <span 
+class="cmmi-10">M </span>= <span 
+class="cmmi-10">Sup</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span><span 
+class="cmsy-7">&#x2229;</span><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>).
+<!--l. 475--><p class="indent" >   Since &#x0393;<sub><span 
+class="cmmi-7">A</span></sub> and &#x0393;<sub><span 
+class="cmmi-7">B</span></sub> are disjoint, by the separation theorem for ordinary convex sets
+there exists a hyperplane <span 
+class="cmmi-10">H </span>such that &#x0393;<sub><span 
+class="cmmi-7">A</span></sub> is on one side of <span 
+class="cmmi-10">H </span>(say, the plus side) and
+                                                                  
+
+                                                                  
+&#x0393;<sub><span 
+class="cmmi-7">B</span></sub> is on the other side (the minus side). Furthermore, by the definitions if &#x0393;<sub><span 
+class="cmmi-7">A</span></sub> and
+&#x0393;<sub><span 
+class="cmmi-7">B</span></sub>, for all points on the minus side of <span 
+class="cmmi-10">H</span>, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">A</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M</span>, and for all points on the plus
+side of <span 
+class="cmmi-10">H</span>, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">B</span></sub>(<span 
+class="cmmi-10">x</span>) <span 
+class="msam-10">&#x2266; </span><span 
+class="cmmi-10">M</span>.
+<!--l. 477--><p class="indent" >   Thus, we have shown that there exists a hyperplane <span 
+class="cmmi-10">H </span>which realizes 1 <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">M </span>as
+the degree of separation of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B</span>. The conclusion that a higher degree of
+separation of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B</span>. The conclusion that a higher degree of separation of <span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">B</span>
+cannot be realized follows from the argument given in Case 1. This concludes the
+proof of the theorem.
+<!--l. 479--><p class="indent" >   The separation theorem for convex fuzzy sets appears to be of particular relevance
+to the problem of pattern discrimination. Its application to this class of problems as
+well as to problems of optimization will be explored in subsequent notes on fuzzy sets
+and their properties.
+<!--l. 481--><p class="indent" >   Received: November 20, 1964
+                                                                  
+
+                                                                  
+   <h3 class="likesectionHead"><a 
+ id="x1-90005.1"></a>Index</h3>
+   <div class="theindex"><span class="index-item">absolute difference, <a 
+href="Zadeh-1965.en.html#dx1-6007" >1</a> <br /></span>
+<span class="index-item">algebraic product, <a 
+href="Zadeh-1965.en.html#dx1-6001" >2</a> <br /></span>
+<span class="index-item">algebraic sum, <a 
+href="Zadeh-1965.en.html#dx1-6004" >3</a> <br /></span>
+<p class="theindex">
+<span class="index-item">boundedness, <a 
+href="Zadeh-1965.en.html#dx1-8010" >4</a> <br /></span>
+</p><p class="theindex">
+<span class="index-item">complement, <a 
+href="Zadeh-1965.en.html#dx1-3004" >5</a> <br /></span>
+<span class="index-item">containment, <a 
+href="Zadeh-1965.en.html#dx1-3006" >6</a> <br /></span>
+<span class="index-item">convex combination, <a 
+href="Zadeh-1965.en.html#dx1-6008" >7</a> <br /></span>
+<span class="index-item">convexity, <a 
+href="Zadeh-1965.en.html#dx1-8001" >8</a> <br /></span>
+</p><p class="theindex">
+<span class="index-item">fuzzy relation, <a 
+href="Zadeh-1965.en.html#dx1-6014" >9</a> <br /></span>
+<span class="index-item">fuzzy set, <a 
+href="Zadeh-1965.en.html#dx1-3001" >10</a> <br /></span>
+</p><p class="theindex">
+<span class="index-item">intersection, <a 
+href="Zadeh-1965.en.html#dx1-3011" >11</a> <br /></span>
+</p><p class="theindex">
+<span class="index-item">union, <a 
+href="Zadeh-1965.en.html#dx1-3008" >12</a> <br /></span>
+</p></div>
+<!--l. 486--><p class="noindent" >
+   <h3 class="likesectionHead"><a 
+ id="x1-100005.1"></a>References</h3>
+<!--l. 486--><p class="noindent" >
+    <div class="thebibliography">
+    <p class="bibitem" ><span class="biblabel">
+  [1]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="XBIRKHOFF"></a>Birkhoff, G. (1948), &#8220;Lattice Theory,&#8221; Am. Math. Soc. Colloq. Publ.,
+    Vol. 25, New York.
+    </p>
+    <p class="bibitem" ><span class="biblabel">
+  [2]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="XHALMOS"></a>Halmos, P.R. (1960), &#8220;Naive Set Theory.&#8221; Van Nostrand, New York.
+    </p>
+    <p class="bibitem" ><span class="biblabel">
+  [3]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="XKLEENE"></a>Kleene, S. C. (1952), &#8220;Introduction to Metamathematics,&#8221; p. 334. Van
+    Nosttrand, New York.</p></div>
+    
+</body></html> 
+
+                                                                  
+
+
