@@ -6,3 +6,5 @@ if [ -f Zadeh-1965.en.idx ]; then
 fi
 
 htlatex Zadeh-1965.en.tex
+
+cp -f Zadeh-1965.en.tex index.html
